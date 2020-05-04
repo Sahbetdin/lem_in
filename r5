@@ -1,0 +1,20 @@
+5
+##start
+ak 5 6
+##end
+bg 43 21
+abc 1 1
+ab 2 3
+angh 2 4
+ma 9 10
+#this is comment
+mc 11 20
+mk 21 30
+abc-angh
+abc-ab
+abc-ak
+ak-bg
+angh-ak
+ma-mc
+mc-mk
+ma-mk
