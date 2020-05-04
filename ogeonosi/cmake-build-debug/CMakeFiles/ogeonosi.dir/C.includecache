@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/_dobrolubov/Lem_in/ogeonosi/lem_in.c
+lem_in.h
+/Users/_dobrolubov/Lem_in/ogeonosi/lem_in.h
+
+/Users/_dobrolubov/Lem_in/ogeonosi/lem_in.h
+my_libft/libft.h
+/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/libft.h
+stdio.h
+-
+string.h
+-
+errno.h
+-
+
+/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/libft.h
+stdlib.h
+-
+unistd.h
+-
+string.h
+-
+fcntl.h
+-
+stdarg.h
+-
+
