@@ -3,7 +3,9 @@ NAME = lem-in
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = fun_hash.c fun_stack1.c fun_vertex.c read_map.c queue1.c
+SRC =	./src/fun_hash.c ./src/fun_stack1.c \
+		./src/fun_vertex.c ./src/read_map.c \
+		./src/queue1.c
 
 OBJECTS = $(patsubst %.c, %.o, $(SRC))
 
@@ -21,8 +23,8 @@ WHITE = "\033[0m"
 
 all: $(NAME)
 
-$(NAME): $(LIBFT) $(OBJECTS) lem-in3.c
-		@$(CC) -o $(NAME) lem-in3.c $(OBJECTS) -I $(LIBFT_PATH) -L $(LIBFT_PATH) -lft
+$(NAME): $(LIBFT) $(OBJECTS) ./src/lem-in3.c
+		@$(CC) -o $(NAME) ./src/lem-in3.c $(OBJECTS) -I $(LIBFT_PATH) -L $(LIBFT_PATH) -lft
 		@echo $(WHITE_B) lem-in $(WHITE)created.
 
 $(OBJECTS): %.o: %.c $(HEADER)

@@ -1,4 +1,4 @@
-#include "lem_in.h"
+#include "../lem_in.h"
 
 
 //function that calculates hashes for 

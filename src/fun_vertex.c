@@ -1,4 +1,4 @@
-#include "lem_in.h"
+#include "../lem_in.h"
 
 /*
 ** initialize vertex.
@@ -22,4 +22,3 @@ t_vertex *vertex_init(char *name, int len, t_status st, int order)
 	v_tmp->order = order;
 	return (v_tmp);
 }
-

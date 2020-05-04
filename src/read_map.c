@@ -1,4 +1,4 @@
-#include "lem_in.h"
+#include "../lem_in.h"
 
 t_bool	read_map(t_map *f)
 {

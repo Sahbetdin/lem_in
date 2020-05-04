@@ -1,4 +1,4 @@
-#include "lem_in.h"
+#include "../lem_in.h"
 
 void	queue_init(t_queue *Q, int size)
 {
