@@ -10,9 +10,9 @@ int main(int argc, char **argv)
 
 
 	farm_init(&farm);
-	if (read_map(&farm) == false)
+	if (!read_map(&farm))
 	{
-		ft_printf("ERROR in map");
+		ft_printf("ERROR in map\n");
 		exit(0);
 	}
 	graph_fill_in(&farm);

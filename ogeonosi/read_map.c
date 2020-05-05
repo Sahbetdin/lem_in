@@ -13,12 +13,15 @@ t_bool 	is_ants(char *line)
 	return (true);
 }
 
-void	add_ant(t_map *f, char *line)
+void	is_command(t_map *f, char **line)
 {
-	if (f->flag_ants == 0 && is_ants(line) == true && ft_atoi(line) > 0)
-	{
-		(f->ants = ft_atoi(line));
-		(f->flag_ants = true);
+	if  (ft_strcmp(*line, "##start") == 0 && f->flag_start == false) {
+		*line = assign_start_end_to_hashmap(f, *line, begin); //the other line is returned
+		f->flag_start = true;
+	}
+	else if (ft_strcmp(*line, "##end") == 0 && f->flag_end == false) {
+		*line = assign_start_end_to_hashmap(f, *line, end); //the other line is returned
+		f->flag_end = true;
 	}
 }
 
@@ -28,33 +31,21 @@ t_bool	read_map(t_map *f)
 	char *line;
 	char *dash;
 
-	while ((res = get_next_line(f->fd, &line)))
+	while (get_next_line(f->fd, &line))
 	{
-		if (is_ants(line) == true)
-			add_ant(f, line);
-		else if (ft_strcmp(line, "##start") == 0 && f->flag_start == false)
+		if (line == NULL)
+			return (false);
+		if (is_ants(line))
 		{
-			line = assign_start_end_to_hashmap(f, line, begin); //the other line is returned
-			f->flag_start = true;
+			if (f->ants != 0 || ft_atoi(line) < 0)
+				return (false);
+			f->ants = ft_atoi(line);
+			f->flag_ants = true; // можно убрать и ориентироваться на f->ants != 0
 		}
-		else if (ft_strcmp(line, "##end") == 0 && f->flag_end == false)
-		{
-			line = assign_start_end_to_hashmap(f, line, end); //the other line is returned
-			f->flag_end = true;
-		}
-		else if (line[0] == '#') // comment
-		{
-			free(line);
-			continue ;
-		}
-		else if (ft_strlen(line) == 0)
-		{
-			free(line);
-			ft_printf("ERROR: empty line\n");
-			exit(0);
-		}
+		else if (line[0] == '#')
+			is_command(f, &line);
 		else if ((dash = ft_strchr(line, '-')))
-		{ // we didn't combine else_if - if such that it doesn't enter other if's
+		{
 			if (parse_links(f, line, dash) == false)
 				return (false);
 		}
@@ -75,6 +66,6 @@ t_bool	read_map(t_map *f)
 	if (f->flag_ants == false || f->flag_start == false ||
 		f->flag_end == false || f->flag_links == false)
 		return (false);
-	// print_hash(f->first_raw, f->hash_size);
+	ft_strdel(&line);
 	return (true);
 }

@@ -19,6 +19,7 @@ t_vertex *vertex_init(char *name, int len, t_status st, int order)
 
 void	farm_init(t_map *f)
 {
+	f->ants = 0;
 	f->hash_size = 10;
 	f->flag_ants = FALSE;
 	f->flag_start = FALSE;
