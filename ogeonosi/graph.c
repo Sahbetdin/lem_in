@@ -21,7 +21,7 @@ t_bool	graph_fill_in(t_map *f)
 			tmp_h = tmp_h->next;
 		}
 	}
-	return (true);
+	return (TRUE);
 }
 
 void	print_graph(t_linked **g, int n)
@@ -29,7 +29,7 @@ void	print_graph(t_linked **g, int n)
 	int i;
 	t_linked *tmp_lst;
 
-	ft_printf("\nPRINT GRAPH:\n");
+	ft_printf("PRINT GRAPH:\n");
 	i = 0;
 	while (i < n)
 	{

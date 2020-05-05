@@ -7,10 +7,10 @@ t_bool	assign_line_to_hashmap(t_map *f, t_status st, char *line, int order)
 	char	*backsp;
 
 	if (!(tmp_h = (t_hash *)malloc(sizeof(t_hash))))
-		return (false);
+		return (FALSE);
 	tmp_h->next = NULL;
 	if ((backsp = ft_strchr(line, ' ')) == NULL)
-		return (false);
+		return (FALSE);
 	tmp_h->v = vertex_init(line, backsp - line, st, f->max_order);
 	if (st == begin)
 		f->start_vertex = f->max_order;
@@ -25,7 +25,7 @@ t_bool	assign_line_to_hashmap(t_map *f, t_status st, char *line, int order)
 		f->first_raw[place] = tmp_h;
 	}
 	f->max_order++;
-	return (true);
+	return (TRUE);
 }
 
 char	*assign_start_end_to_hashmap(t_map *f, char *line, t_status st)
@@ -39,7 +39,7 @@ char	*assign_start_end_to_hashmap(t_map *f, char *line, t_status st)
 		ft_printf("ERROR: in assigning start/end vertex\n");
 		exit(0);
 	}
-	if (assign_line_to_hashmap(f, st, line, f->max_order) == false)
+	if (assign_line_to_hashmap(f, st, line, f->max_order) == FALSE)
 		return (NULL);
 	return (line);
 }

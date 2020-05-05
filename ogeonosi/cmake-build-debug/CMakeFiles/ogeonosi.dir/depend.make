@@ -231,8 +231,14 @@ CMakeFiles/ogeonosi.dir/my_libft/ft_toupper.c.o: ../my_libft/libft.h
 CMakeFiles/ogeonosi.dir/my_libft/ft_trim.c.o: ../my_libft/ft_trim.c
 CMakeFiles/ogeonosi.dir/my_libft/ft_trim.c.o: ../my_libft/libft.h
 
+CMakeFiles/ogeonosi.dir/my_libft/functions1.c.o: ../my_libft/functions1.c
+CMakeFiles/ogeonosi.dir/my_libft/functions1.c.o: ../my_libft/libft.h
 
+CMakeFiles/ogeonosi.dir/my_libft/functions3.c.o: ../my_libft/functions3.c
+CMakeFiles/ogeonosi.dir/my_libft/functions3.c.o: ../my_libft/libft.h
 
+CMakeFiles/ogeonosi.dir/my_libft/functions4.c.o: ../my_libft/functions4.c
+CMakeFiles/ogeonosi.dir/my_libft/functions4.c.o: ../my_libft/libft.h
 
 CMakeFiles/ogeonosi.dir/my_libft/get_next_line.c.o: ../my_libft/get_next_line.c
 CMakeFiles/ogeonosi.dir/my_libft/get_next_line.c.o: ../my_libft/libft.h

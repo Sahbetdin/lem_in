@@ -1,3 +1,3 @@
-/Users/_dobrolubov/Lem_in/ogeonosi/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/_dobrolubov/Lem_in/ogeonosi/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/_dobrolubov/Lem_in/ogeonosi/cmake-build-debug/CMakeFiles/ogeonosi.dir
+/Users/_dobrolubov/rem/ogeonosi/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/_dobrolubov/rem/ogeonosi/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/_dobrolubov/rem/ogeonosi/cmake-build-debug/CMakeFiles/ogeonosi.dir

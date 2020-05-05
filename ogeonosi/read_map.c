@@ -1,5 +1,27 @@
 #include "lem_in.h"
 
+t_bool 	is_ants(char *line)
+{
+	int	i;
+
+	if (line == NULL)
+		return (false);
+	i = 0;
+	while (line[i] != '\0')
+		if (line[0] == '0' || !ft_isdigit(line[i++]))
+			return (false);
+	return (true);
+}
+
+void	add_ant(t_map *f, char *line)
+{
+	if (f->flag_ants == 0 && is_ants(line) == true && ft_atoi(line) > 0)
+	{
+		(f->ants = ft_atoi(line));
+		(f->flag_ants = true);
+	}
+}
+
 t_bool	read_map(t_map *f)
 {
 	int res;
@@ -8,19 +30,8 @@ t_bool	read_map(t_map *f)
 
 	while ((res = get_next_line(f->fd, &line)))
 	{
-		// ft_printf("LINE: %s\n", line);
-		// ft_printf("%s . res = %d\n", line, res);
-		if (f->flag_ants == false)
-		{
-			f->ants = ft_atoi(line);
-			if (f->ants <= 0)
-			{
-				free(line);
-				ft_printf("ERROR: in ants amount\n");
-				exit(0);
-			}
-			f->flag_ants = true;
-		}
+		if (is_ants(line) == true)
+			add_ant(f, line);
 		else if (ft_strcmp(line, "##start") == 0 && f->flag_start == false)
 		{
 			line = assign_start_end_to_hashmap(f, line, begin); //the other line is returned
@@ -31,7 +42,7 @@ t_bool	read_map(t_map *f)
 			line = assign_start_end_to_hashmap(f, line, end); //the other line is returned
 			f->flag_end = true;
 		}
-		else if (line[0] == '#')
+		else if (line[0] == '#') // comment
 		{
 			free(line);
 			continue ;
@@ -52,6 +63,8 @@ t_bool	read_map(t_map *f)
 			if (assign_line_to_hashmap(f, middle, line, f->max_order) == false)
 				return (false);
 		}
+		else if (line[0] == 'L')
+			return (false);
 		else if (f->flag_rooms == true && dash == NULL)
 		{
 			ft_printf("ERROR: more vertice come after links\n");

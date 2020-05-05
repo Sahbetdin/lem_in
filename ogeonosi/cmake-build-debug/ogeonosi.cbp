@@ -8,44 +8,44 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/_dobrolubov/Lem_in/ogeonosi/cmake-build-debug"/>
+				<Option working_dir="/Users/_dobrolubov/rem/ogeonosi/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/Lem_in/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/Lem_in/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/Lem_in/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/Lem_in/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/rem/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/rem/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/rem/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/rem/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/_dobrolubov/Lem_in/ogeonosi/cmake-build-debug"/>
+				<Option working_dir="/Users/_dobrolubov/rem/ogeonosi/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/Lem_in/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/Lem_in/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/Lem_in/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/Lem_in/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/rem/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/rem/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/rem/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/rem/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/_dobrolubov/Lem_in/ogeonosi/cmake-build-debug"/>
+				<Option working_dir="/Users/_dobrolubov/rem/ogeonosi/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/Lem_in/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/Lem_in/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/Lem_in/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/Lem_in/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/rem/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/rem/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/rem/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/rem/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ogeonosi">
-				<Option output="/Users/_dobrolubov/Lem_in/ogeonosi/cmake-build-debug/ogeonosi" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/_dobrolubov/Lem_in/ogeonosi/cmake-build-debug"/>
+				<Option output="/Users/_dobrolubov/rem/ogeonosi/cmake-build-debug/ogeonosi" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/_dobrolubov/rem/ogeonosi/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/_dobrolubov/Lem_in/ogeonosi/."/>
-					<Add directory="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft"/>
+					<Add directory="/Users/_dobrolubov/rem/ogeonosi/."/>
+					<Add directory="/Users/_dobrolubov/rem/ogeonosi/my_libft"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.3/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
@@ -53,21 +53,21 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/Lem_in/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 ogeonosi"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/Lem_in/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/Lem_in/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/Lem_in/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/rem/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 ogeonosi"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/rem/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/rem/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/rem/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ogeonosi/fast">
-				<Option output="/Users/_dobrolubov/Lem_in/ogeonosi/cmake-build-debug/ogeonosi" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/_dobrolubov/Lem_in/ogeonosi/cmake-build-debug"/>
+				<Option output="/Users/_dobrolubov/rem/ogeonosi/cmake-build-debug/ogeonosi" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/_dobrolubov/rem/ogeonosi/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/_dobrolubov/Lem_in/ogeonosi/."/>
-					<Add directory="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft"/>
+					<Add directory="/Users/_dobrolubov/rem/ogeonosi/."/>
+					<Add directory="/Users/_dobrolubov/rem/ogeonosi/my_libft"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.3/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
@@ -75,356 +75,356 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/Lem_in/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 ogeonosi/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/Lem_in/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/Lem_in/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/Lem_in/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/rem/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 ogeonosi/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/rem/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/rem/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/_dobrolubov/rem/ogeonosi/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/dfs.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/dfs.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/graph.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/graph.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/hash.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/hash.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/init.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/init.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/lem_in.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/lem_in.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/lem_in.h">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/lem_in.h">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/link.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/link.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/arithm.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/arithm.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/check_inf_nan1.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/check_inf_nan1.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/check_inf_nan2.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/check_inf_nan2.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_atoi.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_atoi.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_bzero.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_bzero.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_factorial.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_factorial.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_first_decimal.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_first_decimal.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_isalnum.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_isalnum.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_isalpha.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_isalpha.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_isascii.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_isascii.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_isdigit.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_isdigit.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_isprint.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_isprint.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_itoa.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_itoa.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_lstadd.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_lstadd.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_lstdel.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_lstdel.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_lstdelone.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_lstdelone.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_lstiter.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_lstiter.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_lstmap.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_lstmap.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_lstnew.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_lstnew.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_lstnew_gnl.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_lstnew_gnl.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_memalloc.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_memalloc.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_memccpy.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_memccpy.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_memchr.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_memchr.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_memcmp.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_memcmp.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_memcpy.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_memcpy.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_memdel.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_memdel.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_memmove.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_memmove.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_memset.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_memset.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_pgcd.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_pgcd.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_plcm.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_plcm.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_putchar.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_putchar.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_putchar_fd.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_putchar_fd.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_putendl.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_putendl.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_putendl_fd.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_putendl_fd.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_putnbr.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_putnbr.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_putnbr_fd.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_putnbr_fd.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_putstr.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_putstr.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_putstr_fd.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_putstr_fd.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_signum.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_signum.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_strcat.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_strcat.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_strchr.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_strchr.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_strclr.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_strclr.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_strcmp.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_strcmp.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_strcpy.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_strcpy.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_strdel.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_strdel.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_strdup.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_strdup.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_strequ.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_strequ.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_striter.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_striter.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_striteri.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_striteri.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_strjoin.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_strjoin.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_strlcat.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_strlcat.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_strlen.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_strlen.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_strmap.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_strmap.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_strmapi.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_strmapi.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_strncat.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_strncat.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_strncmp.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_strncmp.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_strncpy.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_strncpy.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_strndup.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_strndup.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_strnequ.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_strnequ.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_strnew.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_strnew.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_strnstr.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_strnstr.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_strrchr.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_strrchr.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_strsplit.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_strsplit.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_strstr.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_strstr.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_strsub.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_strsub.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_strtrim.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_strtrim.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_tolower.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_tolower.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_toupper.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_toupper.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/ft_trim.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/ft_trim.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/functions1.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/functions1.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/functions3.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/functions3.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/functions4.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/functions4.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/get_next_line.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/get_next_line.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/libft.h">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/libft.h">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/print_double.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/print_double.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/process_sp1.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/process_sp1.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/process_sp2.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/process_sp2.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/process_sp3.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/process_sp3.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/process_sp4.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/process_sp4.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/process_sp5.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/process_sp5.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/put_d1.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/put_d1.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/put_d2.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/put_d2.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/put_d3.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/put_d3.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/put_d4.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/put_d4.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/put_d5.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/put_d5.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/put_double0.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/put_double0.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/put_double1.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/put_double1.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/put_double2.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/put_double2.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/put_ee1.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/put_ee1.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/put_ee2.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/put_ee2.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/put_ee3.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/put_ee3.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/put_f1.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/put_f1.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/put_f2.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/put_f2.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/put_f3.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/put_f3.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/put_long_dbl1.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/put_long_dbl1.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/put_long_dbl2.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/put_long_dbl2.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/put_long_dbl3.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/put_long_dbl3.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/put_long_e.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/put_long_e.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/put_o_u_x1.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/put_o_u_x1.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/put_o_u_x2.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/put_o_u_x2.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/put_p.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/put_p.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/put_strings1.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/put_strings1.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/put_strings2.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/put_strings2.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/my_libft/two.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/my_libft/two.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/read_map.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/read_map.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/stack_func.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/stack_func.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/vertex.c">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/vertex.c">
 			<Option target="ogeonosi"/>
 		</Unit>
-		<Unit filename="/Users/_dobrolubov/Lem_in/ogeonosi/CMakeLists.txt">
+		<Unit filename="/Users/_dobrolubov/rem/ogeonosi/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

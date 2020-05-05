@@ -6,5 +6,5 @@ C_FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk 
 
 C_DEFINES = 
 
-C_INCLUDES = -I/Users/_dobrolubov/Lem_in/ogeonosi/. -I/Users/_dobrolubov/Lem_in/ogeonosi/my_libft 
+C_INCLUDES = -I/Users/_dobrolubov/rem/ogeonosi/. -I/Users/_dobrolubov/rem/ogeonosi/my_libft 
 

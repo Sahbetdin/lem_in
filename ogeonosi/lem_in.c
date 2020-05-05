@@ -8,8 +8,7 @@ int main(int argc, char **argv)
 	int k, j, n;
 	char *line;
 
-	if (argc != 1)
-		return (0);
+
 	farm_init(&farm);
 	if (read_map(&farm) == false)
 	{

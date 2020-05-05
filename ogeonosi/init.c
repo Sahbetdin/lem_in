@@ -20,11 +20,11 @@ t_vertex *vertex_init(char *name, int len, t_status st, int order)
 void	farm_init(t_map *f)
 {
 	f->hash_size = 10;
-	f->flag_ants = false;
-	f->flag_start = false;
-	f->flag_end = false;
-	f->flag_rooms = false;
-	f->flag_links = false;
+	f->flag_ants = FALSE;
+	f->flag_start = FALSE;
+	f->flag_end = FALSE;
+	f->flag_rooms = FALSE;
+	f->flag_links = FALSE;
 	f->max_order = 0;
 	f->fd = 0;
 	f->first_raw = hashmap_init(f->first_raw, f->hash_size);
