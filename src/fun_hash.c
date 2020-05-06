@@ -51,19 +51,6 @@ void	print_hash(t_hash **h, int hash_size)
 }
 
 
-//uses malloc
-t_hash	**hashmap_init(t_hash **h, int hash_size)
-{
-	int i;
-
-	h = (t_hash **)malloc(sizeof(t_hash *) * hash_size);
-	i = -1;
-	while (++i < hash_size)
-		h[i] = NULL; //initialize with zero
-	// print_hash(h, hash_size);
-	return (h);
-}
-
 //function creates v vertex and assigns st status (start,middle,end)
 //name of vertex *line [without coordinates!], and order in graph
 //then increases f->max_order by 1.

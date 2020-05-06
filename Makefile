@@ -3,9 +3,9 @@ NAME = lem-in
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
-SRC =	./src/fun_hash.c ./src/fun_stack1.c \
-		./src/fun_vertex.c ./src/read_map.c \
-		./src/queue1.c
+SRC =	./src/fun_hash.c ./src/fun_stack1.c ./src/fun_init_del.c ./src/fun_vertex.c \
+		./src/read_map1.c ./src/read_map2.c ./src/queue1.c ./src/fun_print.c \
+		./src/bfs.c
 
 OBJECTS = $(patsubst %.c, %.o, $(SRC))
 
@@ -35,7 +35,7 @@ $(LIBFT): FAKE
 		@$(MAKE) -C $(LIBFT_PATH)
 
 clean:
-		@/bin/rm -f *.o
+		@/bin/rm -f $(OBJECTS)
 		@$(MAKE) -C $(LIBFT_PATH) clean
 		@echo $(WHITE_B) lem-in files deleted!$(WHITE)
 
