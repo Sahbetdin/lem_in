@@ -25,46 +25,84 @@ void	is_command(t_map *f, char **line)
 	}
 }
 
+t_bool is_edge(char *line)
+{
+	int	i;
+
+	if (line == NULL)
+		return (false);
+	i = 0;
+	while (line[i] != '\0' && line[i] != '-')
+	{
+		if (!ft_isalnum(line[i]) && line[i] != '_')
+			return (false);
+		i++;
+	}
+	if (line[i++] != '-')
+		return (false);
+	while (line[i] != '\0')
+	{
+		if (!ft_isalnum(line[i]) && line[i] != '_')
+			return (false);
+		i++;
+	}
+	return (true);
+}
+
+t_bool is_node(char *line)
+{
+	int	i;
+
+	if (line == NULL)
+		return (false);
+	i = 0;
+	if (line[i] == 'L')
+		return (false);
+	while (line[i] != '\0' && line[i] != ' ')
+	{
+		if (!ft_isalnum(line[i]) && line[i] != '_')
+			return (false);
+		i++;
+	}
+	if (line[i++] != ' ')
+		return (false);
+	while (line[i] != '\0' && line[i] != ' ')
+		if (!ft_isdigit(line[i++]))
+			return (false);
+	if (line[i++] != ' ')
+		return (false);
+	while (line[i] != '\0')
+		if (!ft_isdigit(line[i++]))
+			return (false);
+	return (true);
+}
+
 t_bool	read_map(t_map *f)
 {
-	int res;
+	t_bool edge;
+	t_bool node;
+	t_bool res_gnl;
 	char *line;
-	char *dash;
 
-	while (get_next_line(f->fd, &line))
+	while ((res_gnl = get_next_line(f->fd, &line)) > 0)
 	{
-		if (line == NULL)
-			return (false);
 		if (is_ants(line))
 		{
 			if (f->ants != 0 || ft_atoi(line) < 0)
 				return (false);
 			f->ants = ft_atoi(line);
-			f->flag_ants = true; // можно убрать и ориентироваться на f->ants != 0
 		}
 		else if (line[0] == '#')
 			is_command(f, &line);
-		else if ((dash = ft_strchr(line, '-')))
-		{
-			if (parse_links(f, line, dash) == false)
-				return (false);
-		}
-		else if (f->flag_rooms == false)
-		{
-			if (assign_line_to_hashmap(f, middle, line, f->max_order) == false)
-				return (false);
-		}
-		else if (line[0] == 'L')
-			return (false);
-		else if (f->flag_rooms == true && dash == NULL)
-		{
-			ft_printf("ERROR: more vertice come after links\n");
-			exit(0);
-		}
-		free(line);
+		else if (is_edge(line))
+			edge = parse_links(f, line, ft_strchr(line, '-'));
+		else if (is_node(line))
+			node = assign_line_to_hashmap(f, middle, line, f->max_order);
+		ft_strdel(&line);
 	}
-	if (f->flag_ants == false || f->flag_start == false ||
-		f->flag_end == false || f->flag_links == false)
+	if (f->ants == 0 || f->flag_start == false ||
+		edge == false || node == false || f->flag_end == false ||
+		f->flag_links == false || res_gnl == -1)
 		return (false);
 	ft_strdel(&line);
 	return (true);

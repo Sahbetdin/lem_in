@@ -4,6 +4,7 @@
 //initialize farm variables 
 void	farm_init(t_map *f)
 {
+	f->ants = 0;
 	f->hash_size = 10;
 	f->flag_ants = false;
 	f->flag_start = false;
@@ -87,6 +88,8 @@ t_bool	parse_links(t_map *f, char *line, char *dash)
 	if ((v1 = find_vertex(f, line, dash - line)) == NULL)
 		return (false);
 	// ft_printf("v1->name = %s", v1->name);
+	// зеркальность
+	// name1-name1
 	if ((v2 = find_vertex(f, dash + 1, ft_strlen(dash + 1))) == NULL)
 		return (false);
 	link_neighbour(v1, v2);
