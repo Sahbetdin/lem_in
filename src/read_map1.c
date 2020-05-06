@@ -97,6 +97,7 @@ t_bool	read_map(t_map *f)
 		else if (is_node(line))
 			node = assign_line_to_hashmap(f, middle, line, f->max_order);
 		ft_strdel(&line);
+	// write(1, "here\n", 5);
 	}
 	if (f->ants == 0 || f->flag_start == false ||
 		edge == false || node == false || f->flag_end == false ||

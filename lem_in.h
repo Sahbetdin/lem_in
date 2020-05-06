@@ -17,12 +17,26 @@
 # include <string.h>
 # include <errno.h>
 
+typedef enum
+{
+	false,
+	true
+}	t_bool;
+
+typedef enum
+{
+	begin,
+	middle,
+	end
+}	t_status;	
+
 typedef struct		s_linked
 {
 	int				data;
 	int				in; //after bfs we have in and out links (arcs)
 	int				out;
 	int				neutral;
+	t_status		status; // if start then 0, meduim 1, end 2 // добавил сюда. ниже нажо будет удалить
 	struct s_linked	*next;
 }					t_linked;
 
@@ -39,19 +53,6 @@ typedef struct		s_stack
 	int				len;
 }					t_stack;
 
-typedef enum
-{
-	false,
-	true
-}	t_bool;
-
-
-typedef enum
-{
-	begin,
-	middle,
-	end
-}	t_status;	
 
 typedef struct		s_vertex
 {
@@ -152,5 +153,5 @@ void				print_linked_visited(t_linked *lst, t_bool *vis);
 void				farm_delete(t_map *f); //еще не написан
 int					*visited_init(int *vis, int n);
 void				bfs(t_map *f, int start);
-
+void				init_in_out_neutral(t_linked **g, int n);
 #endif

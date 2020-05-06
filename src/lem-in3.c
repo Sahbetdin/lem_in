@@ -18,13 +18,13 @@ int main(int argc, char **argv)
 		ft_printf("ERROR in map");
 		exit(0);
 	}
-	print_hash(farm.first_raw,farm.hash_size);
+	// print_hash(farm.first_raw,farm.hash_size);
 	// ft_printf("max_order = %d\n", farm.max_order);
 	graph_fill_in(&farm);
 	bfs(&farm, farm.start_vertex);
 
 	// dfs(&farm);
-//	print_graph(farm.g, farm.max_order);
+	print_graph(farm.g, farm.max_order);
 
 	return (0);
 }

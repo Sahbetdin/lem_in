@@ -53,3 +53,38 @@ int		*visited_init(int *vis, int n)
 		vis[i] = -1;
 	return (vis);
 }
+
+
+/*
+** initialize vertex.
+** all it's fields are zeros except
+** name which is ft_strdup(line)
+*/
+
+t_vertex *vertex_init(char *name, int len, t_status st, int order)
+{
+	t_vertex *v_tmp;
+
+	if (!(v_tmp = (t_vertex *)malloc(sizeof(t_vertex))))
+		exit(0);
+	v_tmp->name = ft_strndup(name, len);
+	v_tmp->len = len;
+	v_tmp->neighbour = NULL;
+	v_tmp->status = st;
+	v_tmp->order = order;
+	return (v_tmp);
+}
+
+void	init_in_out_neutral(t_linked **g, int n)
+{
+	int i;
+
+	i = 0;
+	while (i < n)
+	{
+		g[i]->in = 0;
+		g[i]->out = 0;
+		g[i]->neutral = 0;
+		i++;
+	}
+}

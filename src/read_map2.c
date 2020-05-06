@@ -78,8 +78,10 @@ t_bool	graph_fill_in(t_map *f)
 			tmp_v = tmp_h->v;
 			tmp_lst = tmp_v->neighbour;
 			f->g[tmp_v->order] = tmp_v->neighbour;
+			f->g[tmp_v->order]->status = tmp_v->status;
 			tmp_h = tmp_h->next;
 		}
 	}
+	init_in_out_neutral(f->g, f->max_order);
 	return (true);
 }
