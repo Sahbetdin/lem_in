@@ -42,11 +42,15 @@ t_bool	parse_links(t_map *f, char *line, char *dash)
 		f->flag_rooms = true;
 	if ((v1 = find_vertex(f, line, dash - line)) == NULL)
 		return (false);
-	// ft_printf("v1->name = %s", v1->name);
-	// нужна проверка на зеркальность
-	// нужна проверка на name1-name1
+	ft_printf("v1->name = %s", v1->name);
 	if ((v2 = find_vertex(f, dash + 1, ft_strlen(dash + 1))) == NULL)
 		return (false);
+	ft_printf(" %s\n", v2->name);
+	if (!(ft_strcmp(v1->name, v2->name)))
+	{
+		printf("\nERROR!\n");
+		return (false);
+	}
 	link_neighbour(v1, v2);
 	link_neighbour(v2, v1);
 	if (f->flag_links == false)

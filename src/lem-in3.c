@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 	if (read_map(&farm) == false)
 	{
 		ft_printf("ERROR in map");
-		exit(0);
+		return (0);
 	}
 	print_hash(farm.first_raw,farm.hash_size);
 	// ft_printf("max_order = %d\n", farm.max_order);
