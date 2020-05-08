@@ -33,10 +33,6 @@ typedef enum
 typedef struct		s_linked
 {
 	int				data;
-	int				in; //after bfs we have in and out links (arcs)
-	int				out;
-	int				neutral;
-	t_status		status; // if start then 0, meduim 1, end 2 // добавил сюда. ниже нажо будет удалить
 	struct s_linked	*next;
 }					t_linked;
 
@@ -105,6 +101,10 @@ typedef struct      s_map
 	t_hash			**first_raw;
 	t_linked		**g; //graph itself
 	int				*bfs_order; //each node has BFS order
+	int				*in; //after bfs we have in and out links (arcs)
+	int				*out;
+	int				*neutral;
+	t_status		*status; // if start then 0, meduim 1, end 2 // добавил сюда. ниже нажо будет удалить
 }					t_map;
 
 /*
@@ -149,9 +149,12 @@ t_bool				append_to_stack(t_stack *stack, int value);
 int					pop_from_stack(t_stack *stack);
 int					top_in_stack(t_stack *stack);
 void				print_stack(t_stack *stack);
-void				print_linked_visited(t_linked *lst, t_bool *vis);
+void				print_linked_visited(t_linked *lst, int *vis);
 void				farm_delete(t_map *f); //еще не написан
-int					*visited_init(int *vis, int n);
+// int					*visited_init(int *vis, int n);
+int					*arr_init(int *arr, int n, int value);
 void				bfs(t_map *f, int start);
-void				init_in_out_neutral(t_linked **g, int n);
+void				print_in_out_neutral(t_map *f);
+void				print_linked_list(t_linked **head);
+void				del_linked_list(t_linked **head);
 #endif

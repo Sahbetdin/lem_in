@@ -1,134 +1,22 @@
 
 #include "../lem_in.h"
 
-
-/*
-** sets number of in 'arrows' for each vertex, i.e.
-** number of neighbours whos bfs_order is greater than the current one
-*/
-
-void	set_ins(t_map *f)
+//delete edge (u, v)
+//and (v, u), respectively from graph
+void	delete_edge(t_map *f, int u, int v)
 {
-	int i;
-	t_linked *tmp;
 
-	i = 0;
-	while (i < f->max_order)
-	{
-		if (f->g[i]->status == begin)
-		{
-			i++;
-			continue;
-		}
-		tmp = f->g[i];
-		while (tmp)
-		{
-			if (f->bfs_order[tmp->data] < f->bfs_order[i])
-				f->g[i]->in++;
-			tmp = tmp->next;
-		}
-		i++;
-	}
-}
-
-/*
-** sets number of out 'arrows' for each vertex, i.e.
-** number of neighbours whos bfs_order is less than the current one
-*/
-
-void	set_outs(t_map *f)
-{
-	int i;
-	t_linked *tmp;
-
-	i = 0;
-	while (i < f->max_order)
-	{
-		if (f->g[i]->status == end)
-		{
-			i++;
-			continue;
-		}
-		tmp = f->g[i];
-		while (tmp)
-		{
-			if (f->bfs_order[tmp->data] > f->bfs_order[i])
-				f->g[i]->out++;
-			tmp = tmp->next;
-		}
-		i++;
-	}
-}
-
-/*
-** sets number of neutrals for each vertex
-** i.e. number of neighbours which have the same bfs_order as
-** the given one
-*/
-
-void	set_neutrals(t_map *f)
-{
-	int i;
-	t_linked *tmp;
-
-	i = 0;
-	while (i < f->max_order)
-	{
-		if (f->g[i]->status == begin)
-		{
-			i++;
-			continue;
-		}
-		tmp = f->g[i];
-		while (tmp)
-		{
-			// ft_printf("bfs_order[%d] = %d, neighb = %d, bfs_neigb = %d", i, f->bfs_order[i], tmp->data, f->bfs_order[tmp->data]);
-			if (f->bfs_order[i] == f->bfs_order[tmp->data])
-			{
-				f->g[i]->neutral++;
-				// ft_printf(" YES\n");
-			}
-			//  else
-			// 	ft_printf("\n");
-
-		// ft_printf("i =  %d,curr = %d, neighb = %d \n ", i, f->bfs_order[i], f->bfs_order[tmp->data]);
-
-			// if (f->bfs_order[tmp->data] == f->bfs_order[i])
-			// 	f->g[i]->neutral++;
-			tmp = tmp->next;
-		}
-		// ft_printf("      i = %d, neighb = %d \n", i, f->g[i]->neutral);
-
-		i++;
-	}
-
-
-	i = 0;
-	while (i < f->max_order)
-	{
-		ft_printf("      i = %d, neighb = %d \n", i, f->g[i]->neutral);
-		i++;
-	}
 }
 
 
-
-//4th may
-/*
-visited[i] will show the step at which i-th was visited
-q is a queue for holding vertices which were visited
-tmp is current list element address to skip the neighbours of a given vertice
-curr_addr is address of current place in array. During the work BSF looks
-neighbours of curr_addr in graph
-*/
 void	bfs(t_map *f, int start)
 {
 	t_queue q;
 	t_linked *tmp;
 	int *curr_addr; //for walking through queue
 	int i;
+	t_bool flag_dead;
 
-	f->bfs_order = visited_init(f->bfs_order, f->max_order);
 	queue_init(&q, f->max_order);
 	queue_insert(&q, start);
 	curr_addr = q.front;
@@ -147,29 +35,42 @@ void	bfs(t_map *f, int start)
 		}
 		curr_addr++;
 	}
-
-	set_outs(f);
-	set_ins(f);
-	set_neutrals(f);
+	queue_print(&q);
+	
 	i = 0;
 	while (i < f->max_order)
 	{
-		ft_printf("i =  %d, status = %d, bfs_order = %d, ", i, f->g[i]->status, f->bfs_order[i]);
-		ft_printf("in = %d, out = %d, neutral = %d\n", i, f->g[i]->in, f->g[i]->out, f->g[i]->neutral);
+		ft_printf("i = %d, bfs_order = %d\n", i, f->bfs_order[i]);
 		i++;
 	}
+	print_linked_visited(f->g[f->end_vertex], f->bfs_order);
+	int *shortest_path;
+	int x; //currnet bfs_oreder
+	int node; //current node number
 
+	shortest_path = (int *)malloc(sizeof(int) * f->max_order);
+	i = 0;
+	while (i < f->max_order)
+		shortest_path[i++] = -1;
+	node = f->end_vertex;
+	i = 0;
+	while (f->bfs_order[node] != 1)
+	{
+		tmp = f->g[node];
+		while (tmp)
+		{
+			if (f->bfs_order[tmp->data] == f->bfs_order[node] - 1)
+				break ;
+			tmp = tmp->next;
+		}
+		shortest_path[i] = tmp->data;
+		i++;
+		node = tmp->data;
+	}
+	i = 0;
+	while (i < f->max_order)
+		ft_printf("%d ", shortest_path[i++]);
 
-
-
-
-	// ft_printf("OUTS: \n");
-	// i = 0;
-	// while (i < f->max_order)
-	// {
-	// 	ft_printf("i =  %d, out = %d\n", i, f->g[i]->out);
-	// 	i++;
-	// }
 
 	queue_delete(&q);
 	//delete queue elements!!!!

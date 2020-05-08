@@ -15,6 +15,9 @@ void	farm_init(t_map *f)
 	f->fd = 0;
 	f->first_raw = hashmap_init(f->first_raw, f->hash_size);
 	f->bfs_order = NULL;
+	f->in = NULL;
+	f->out = NULL;
+	f->neutral = NULL;	
 }
 
 
@@ -39,23 +42,6 @@ t_hash	**hashmap_init(t_hash **h, int hash_size)
 }
 
 /*
-alloccate memory for visited order for bfs
-and initialize it with -1
-*/
-
-int		*visited_init(int *vis, int n)
-{
-	int i;
-
-	vis = (int *)malloc(sizeof(int) * n);
-	i = -1;
-	while (++i < n)
-		vis[i] = -1;
-	return (vis);
-}
-
-
-/*
 ** initialize vertex.
 ** all it's fields are zeros except
 ** name which is ft_strdup(line)
@@ -75,16 +61,41 @@ t_vertex *vertex_init(char *name, int len, t_status st, int order)
 	return (v_tmp);
 }
 
-void	init_in_out_neutral(t_linked **g, int n)
+// /*
+// alloccate memory for visited order for bfs
+// and initialize it with -1
+// */
+
+// int		*visited_init(int *vis, int n)
+// {
+// 	int i;
+
+// 	vis = (int *)malloc(sizeof(int) * n);
+// 	i = -1;
+// 	while (++i < n)
+// 		vis[i] = -1;
+// 	return (vis);
+// }
+
+/*
+allocate memory of length n
+and initialize it with value
+*/
+
+int		*arr_init(int *arr, int n, int value)
 {
 	int i;
 
-	i = 0;
-	while (i < n)
-	{
-		g[i]->in = 0;
-		g[i]->out = 0;
-		g[i]->neutral = 0;
-		i++;
-	}
+	arr = (int *)malloc(sizeof(int) * n);
+	i = -1;
+	while (++i < n)
+		arr[i] = value;
+	return (arr);
+}
+
+t_linked	*del_list_element(t_linked *lst)
+{
+	lst->next = NULL;
+	free(lst);
+	return (NULL);
 }

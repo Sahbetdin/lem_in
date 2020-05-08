@@ -21,10 +21,11 @@ int main(int argc, char **argv)
 	// print_hash(farm.first_raw,farm.hash_size);
 	// ft_printf("max_order = %d\n", farm.max_order);
 	graph_fill_in(&farm);
+	print_graph(farm.g, farm.max_order);
 	bfs(&farm, farm.start_vertex);
+	// print_graph(farm.g, farm.max_order);
 
 	// dfs(&farm);
-	print_graph(farm.g, farm.max_order);
 
 	return (0);
 }

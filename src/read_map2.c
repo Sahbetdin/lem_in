@@ -8,7 +8,7 @@
 
 t_bool link_neighbour(t_vertex *dest, t_vertex *src)
 {
-	t_linked *list_elem;
+	t_linked	*list_elem;
 
 	if ((list_elem = (t_linked *)malloc(sizeof(t_linked))) == NULL)
 		return (false);
@@ -32,11 +32,11 @@ t_bool link_neighbour(t_vertex *dest, t_vertex *src)
 //if error, returns false
 t_bool	parse_links(t_map *f, char *line, char *dash)
 {
-	int n;
-	int i;
-	t_hash *tmp_h;
-	t_vertex *v1;
-	t_vertex *v2;
+	int			n;
+	int			i;
+	t_hash		*tmp_h;
+	t_vertex	*v1;
+	t_vertex	*v2;
 
 	if (f->flag_rooms == false) //first, we set that the rooms are finished
 		f->flag_rooms = true;
@@ -62,12 +62,14 @@ t_bool	parse_links(t_map *f, char *line, char *dash)
 */
 t_bool	graph_fill_in(t_map *f)
 {
-	int i;
-	t_hash *tmp_h;
-	t_vertex *tmp_v;
-	t_linked *tmp_lst;
+	int			i;
+	t_hash		*tmp_h;
+	t_vertex	*tmp_v;
+	t_linked	*tmp_lst;
 
 	if (!(f->g = (t_linked **)malloc(sizeof(t_linked *) * f->max_order)))
+		return (false);
+	if (!(f->status = (t_status *)malloc(sizeof(t_status) * f->max_order)))
 		return (false);
 	i = -1;
 	while (++i < f->hash_size)
@@ -78,10 +80,13 @@ t_bool	graph_fill_in(t_map *f)
 			tmp_v = tmp_h->v;
 			tmp_lst = tmp_v->neighbour;
 			f->g[tmp_v->order] = tmp_v->neighbour;
-			f->g[tmp_v->order]->status = tmp_v->status;
+			f->status[tmp_v->order] = tmp_v->status;
 			tmp_h = tmp_h->next;
 		}
 	}
-	init_in_out_neutral(f->g, f->max_order);
+	f->bfs_order = arr_init(f->bfs_order, f->max_order, -1);
+	f->in = arr_init(f->in, f->max_order, 0);
+	f->out = arr_init(f->out, f->max_order, 0);
+	f->neutral = arr_init(f->neutral, f->max_order, 0);
 	return (true);
 }

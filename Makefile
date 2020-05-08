@@ -5,7 +5,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 SRC =	./src/fun_hash.c ./src/fun_stack1.c ./src/fun_init_del.c ./src/fun_vertex.c \
 		./src/read_map1.c ./src/read_map2.c ./src/queue1.c ./src/fun_print.c \
-		./src/bfs.c
+		./src/bfs.c ./src/fun_linked_list.c
 
 OBJECTS = $(patsubst %.c, %.o, $(SRC))
 
