@@ -72,6 +72,7 @@ t_bool is_node(char *line)
 	return (true);
 }
 
+
 t_bool	read_map(t_map *f)
 {
 	t_bool	edge;
@@ -79,6 +80,8 @@ t_bool	read_map(t_map *f)
 	int		res_gnl;
 	char	*line;
 
+	if (!check_ant_line(f, line))
+		return (false);
 	while ((res_gnl = get_next_line(f->fd, &line)) > 0)
 	{
 		if (is_ants(line))
@@ -103,7 +106,8 @@ t_bool	read_map(t_map *f)
 		}
 		ft_strdel(&line);
 	}
-	if (f->flag_start == false || f->flag_end == false || f->flag_links == false || res_gnl == -1)
+	if (f->flag_start == false || f->flag_end == false
+	|| f->flag_links == false || res_gnl == -1)
 		return (false);
 	ft_strdel(&line);
 	return (true);

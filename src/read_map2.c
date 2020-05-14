@@ -35,6 +35,7 @@ t_bool	parse_links(t_map *f, char *line, char *dash)
 	int n;
 	int i;
 	t_hash *tmp_h;
+	t_vert *list;
 	t_vertex *v1;
 	t_vertex *v2;
 
@@ -47,12 +48,10 @@ t_bool	parse_links(t_map *f, char *line, char *dash)
 		return (false);
 	ft_printf(" %s\n", v2->name);
 	if (!(ft_strcmp(v1->name, v2->name)))
-	{
-		printf("\nERROR!\n");
 		return (false);
-	}
-	link_neighbour(v1, v2);
-	link_neighbour(v2, v1);
+	list-
+	link_neighbour(v1, v2); //?
+	link_neighbour(v2, v1); //?
 	if (f->flag_links == false)
 		f->flag_links = true;
 	return (true);
