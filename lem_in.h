@@ -71,6 +71,14 @@ typedef struct		s_hash
 	struct s_hash	*next;
 }					t_hash;
 
+typedef struct		s_vert
+{
+	char			*name1;
+	char			*name2;
+	struct s_vert	*next;
+}					t_vert;
+
+
 /*
 ** this is global structure which contains
 ** ants number,
