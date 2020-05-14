@@ -1,6 +1,5 @@
 #include "../lem_in.h"
 
-
 //we use dfs for checking if start and end are in the same
 //connectivity component
 //we need stack and its methods

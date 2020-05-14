@@ -88,6 +88,7 @@ char	*assign_start_end_to_hashmap(t_map *f, char *line, t_status st)
 {
 	int res;
 
+
 	free(line); //the next line should be not 0 length, doesn't contain '-' and not comment
 	if (!((res = get_next_line(f->fd, &line)) != 0 && 
 	!ft_strchr(line, '-') && line[0] != '#'))

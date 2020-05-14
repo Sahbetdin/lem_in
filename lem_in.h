@@ -93,18 +93,22 @@ typedef struct      s_map
 	t_bool			flag_end;
 	t_bool			flag_rooms;
 	t_bool			flag_links;
+	t_bool			found_shortest_path;
 	int				max_order; //number of vertice
 	int				hash_size;
 	int				fd;
-	int				start_vertex;
-	int				end_vertex;
-	t_hash			**first_raw;
+	int				start_vertex; //the room where the algorithm starts
+	int				end_vertex; ////the room where algorithm finishes
+	t_hash			**first_raw; //in hash table
 	t_linked		**g; //graph itself
 	int				*bfs_order; //each node has BFS order
-	int				*in; //after bfs we have in and out links (arcs)
-	int				*out;
-	int				*neutral;
+	int				*shortest_path;
 	t_status		*status; // if start then 0, meduim 1, end 2 // добавил сюда. ниже нажо будет удалить
+	int				current_path; //for work with the current path
+	int				max_paths;
+	int				**paths;
+	t_linked		*arc1;
+	t_linked		*arc2;
 }					t_map;
 
 /*
@@ -152,9 +156,15 @@ void				print_stack(t_stack *stack);
 void				print_linked_visited(t_linked *lst, int *vis);
 void				farm_delete(t_map *f); //еще не написан
 // int					*visited_init(int *vis, int n);
-int					*arr_init(int *arr, int n, int value);
+int					*arr_init(int n, int value);
+void				arr_clear_with_value(int *arr, int n, int value);
 void				bfs(t_map *f, int start);
-void				print_in_out_neutral(t_map *f);
 void				print_linked_list(t_linked **head);
 void				del_linked_list(t_linked **head);
+t_linked			*delete_arc(t_map *f, int haystack, int needle);
+void				print_bfs_order(int *arr, int n);
+void				path_assign(t_map *f, int *arr);
+void				print_path(int *arr, int n);
+void				reverse_array(int *arr, int n);
 #endif
+

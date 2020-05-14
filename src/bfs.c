@@ -1,11 +1,34 @@
 
 #include "../lem_in.h"
 
-//delete edge (u, v)
-//and (v, u), respectively from graph
-void	delete_edge(t_map *f, int u, int v)
-{
 
+//delete edge: from g[haystack] extract and return needle(t_linked element) of haystack
+// E.g. g[haystack] : .., .., needle, .. ..
+//we are sure that g[haystack] != NULL and it has at least one element.
+t_linked	*delete_arc(t_map *f, int haystack, int needle)
+{
+	t_linked *curr;
+	t_linked *prev;
+
+	curr = f->g[haystack];
+	if (curr->data == needle)
+	{
+		f->g[haystack] = curr->next;
+		curr->next = NULL;
+		return (curr);
+	}
+	while (curr)
+	{
+		if (curr->data == needle)
+			break ;
+		prev = curr;
+		curr = curr->next;
+	}
+	if (curr == NULL) //if didn't find anything
+		return (NULL);
+	prev->next = curr->next;
+	curr->next = NULL;
+	return (curr);
 }
 
 
@@ -14,12 +37,13 @@ void	bfs(t_map *f, int start)
 	t_queue q;
 	t_linked *tmp;
 	int *curr_addr; //for walking through queue
-	int i;
 	t_bool flag_dead;
 
 	queue_init(&q, f->max_order);
 	queue_insert(&q, start);
 	curr_addr = q.front;
+
+	arr_clear_with_value(f->bfs_order, f->max_order, -1);//clear bfs_order
 	f->bfs_order[start] = 0;
 	while (curr_addr <= q.rear)
 	{	
@@ -35,43 +59,8 @@ void	bfs(t_map *f, int start)
 		}
 		curr_addr++;
 	}
-	queue_print(&q);
-	
-	i = 0;
-	while (i < f->max_order)
-	{
-		ft_printf("i = %d, bfs_order = %d\n", i, f->bfs_order[i]);
-		i++;
-	}
-	print_linked_visited(f->g[f->end_vertex], f->bfs_order);
-	int *shortest_path;
-	int x; //currnet bfs_oreder
-	int node; //current node number
 
-	shortest_path = (int *)malloc(sizeof(int) * f->max_order);
-	i = 0;
-	while (i < f->max_order)
-		shortest_path[i++] = -1;
-	node = f->end_vertex;
-	i = 0;
-	while (f->bfs_order[node] != 1)
-	{
-		tmp = f->g[node];
-		while (tmp)
-		{
-			if (f->bfs_order[tmp->data] == f->bfs_order[node] - 1)
-				break ;
-			tmp = tmp->next;
-		}
-		shortest_path[i] = tmp->data;
-		i++;
-		node = tmp->data;
-	}
-	i = 0;
-	while (i < f->max_order)
-		ft_printf("%d ", shortest_path[i++]);
-
-
+	// queue_print(&q);
 	queue_delete(&q);
 	//delete queue elements!!!!
 }

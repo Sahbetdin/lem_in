@@ -44,6 +44,18 @@ void	print_linked_visited(t_linked *lst, int *vis)
 	ft_printf("nil\n");
 }
 
+void	print_bfs_order(int *arr, int n)
+{
+	int i;
+
+	i = 0;
+	while (i < n)
+	{
+		ft_printf("i = %d, bfs_order = %d\n", i, arr[i]);
+		i++;
+	}
+}
+
 
 void	print_visited(int *vis, int n)
 {
@@ -55,16 +67,14 @@ void	print_visited(int *vis, int n)
 		ft_printf("(%d, %d)\n", i, vis[i]);
 }
 
-void	print_in_out_neutral(t_map *f)
+void	print_path(int *arr, int n)
 {
 	int i;
 
 	i = 0;
-	while (i < f->max_order)
-	{
-		ft_printf("i =  %d, status = %d, bfs_order = %d, ", i, f->status[i], f->bfs_order[i]);
-		ft_printf("in = %d, out = %d, neutral = %d\n", f->in[i], f->out[i], f->neutral[i]);
-		i++;
-	}
+	while (i < n)
+		ft_printf("%d ", arr[i++]);
+	ft_printf("\n");
 }
+
 
