@@ -72,40 +72,56 @@ t_bool is_node(char *line)
 	return (true);
 }
 
+t_bool ants_init(t_map *f, char **line)
+{
+	while(get_next_line(f->fd, &(*line)))
+	{
+		if (is_ants(*line))
+		{
+			if (f->ants != 0 || ft_atoi(*line) < 0)
+				return (false);
+			f->ants = ft_atoi(*line);
+			if (f->ants == 0)
+				return (false);
+			ft_strdel(&(*line));
+			break;
+		}
+	}
+	return (true);
+}
+
+t_bool		rest_init(t_map *f, char **line, int *res_gnl)
+{
+	while ((*res_gnl = get_next_line(f->fd, &(*line))) > 0)
+	{
+		if (is_ants(*line))
+			return (false);
+		if (*line[0] == '#')
+			is_command(f, &(*line));
+		else if (is_node(*line))
+		{
+			if (assign_line_to_hashmap(f, middle, *line, f->max_order) == false)
+				return (false);
+		}
+		else if (is_edge(*line))
+		{
+			if (parse_links(f, *line, ft_strchr(*line, '-')) == false)
+				return(false);
+		}
+		ft_strdel(&(*line));
+	}
+	return(true);
+}
 
 t_bool	read_map(t_map *f)
 {
-	t_bool	edge;
-	t_bool	node;
 	int		res_gnl;
 	char	*line;
 
-	if (!check_ant_line(f, line))
+	if (ants_init(f, &line) == false)
 		return (false);
-	while ((res_gnl = get_next_line(f->fd, &line)) > 0)
-	{
-		if (is_ants(line))
-		{
-			if (f->ants != 0 || ft_atoi(line) < 0)
-				return (false);
-			f->ants = ft_atoi(line);
-			if (f->ants == 0)
-				return (false);
-		}
-		else if (line[0] == '#')
-			is_command(f, &line);
-		else if (is_node(line))
-		{
-			if (assign_line_to_hashmap(f, middle, line, f->max_order) == false)
-				return (false);
-		}
-		else if (is_edge(line))
-		{
-			if (parse_links(f, line, ft_strchr(line, '-')) == false)
-				return(false);
-		}
-		ft_strdel(&line);
-	}
+	if (rest_init(f, &line, &res_gnl) == false)
+		return (false);
 	if (f->flag_start == false || f->flag_end == false
 	|| f->flag_links == false || res_gnl == -1)
 		return (false);
