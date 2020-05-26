@@ -1,0 +1,13 @@
+10
+##start
+abc 100 140
+#coordinates should be!
+abcd 110 150
+rr 180 200
+gfh 200 240
+##end
+Tr_s 230 300
+abc-abcd
+abcd-rr
+rr-gfh
+gfh-Tr_s

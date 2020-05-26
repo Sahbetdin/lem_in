@@ -27,6 +27,12 @@ int			ft_cut_backspaces(const char *s)
 	return (i);
 }
 
+/*
+** standard atoi function. Parses string and returns number.
+** in case it's out of int for positives returns negative and vice versus.
+** for out of long returns -1 for positives and 1 for negatives
+*/
+
 int			ft_atoi(const char *str)
 {
 	int			i;
@@ -51,4 +57,25 @@ int			ft_atoi(const char *str)
 		i++;
 	}
 	return (sign * res);
+}
+
+/*
+** the same as ft_atoi, parses string and puts it to *n
+** returns char pointer to next character which might be NULL
+** Used in lem-in, for example for parsing room coordinates,
+** e.g. name1 100 150
+*/
+
+char		*ft_atoi_pointer(const char *str, int *n)
+{
+	int i;
+
+	i = 0;
+	i += ft_cut_backspaces(str);
+	*n = ft_atoi(str + i);
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
+		i++;
+	return ((char *)str + i);
 }

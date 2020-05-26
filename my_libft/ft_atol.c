@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   functions2.c                                       :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: btrifle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,47 +12,11 @@
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
-{
-	char		ch;
+/*
+** the same as ft_atoi but for longs
+*/
 
-	ch = (char)c;
-	while (*s)
-	{
-		if (*s == ch)
-			return ((char *)s);
-		s++;
-	}
-	if (*s == ch)
-		return ((char *)s);
-	return (NULL);
-}
-
-char	*ft_strdup(const char *s1)
-{
-	char		*tmp;
-	char		*p;
-	size_t		i;
-	size_t		n;
-
-	i = 0;
-	p = (char *)s1;
-	while (p[++i])
-		;
-	n = i;
-	if (!(tmp = (char *)malloc(sizeof(char ) * (n + 1))))
-		return (NULL);
-	i = 0;
-	while (i < n)
-	{
-		tmp[i] = p[i];
-		i++;
-	}
-	tmp[i] = '\0';
-	return (tmp);
-}
-
-int		ft_atoi2(const char *str, char *end)
+long long	ft_atol(const char *str)
 {
 	int			i;
 	long long	res;
@@ -66,7 +30,7 @@ int		ft_atoi2(const char *str, char *end)
 		sign = -1;
 	if (str[i] == '+' || str[i] == '-')
 		i++;
-	while (str[i] >= '0' && str[i] <= '9' && str + i < end)
+	while (str[i] >= '0' && str[i] <= '9')
 	{
 		res = res * 10 + (str[i] - '0');
 		if (res < 0 && sign == 1)

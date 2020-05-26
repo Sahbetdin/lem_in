@@ -1,88 +1,101 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   read_map2.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/05/15 20:13:36 by ogeonosi          #+#    #+#             */
+/*   Updated: 2020/05/26 17:27:56 by btrifle          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../lem_in.h"
 
 /*
-** this function accepts two vertice
-** it assigns u2 as neighbour to u1->neighbour linked list
-** it assigns u2's order.
+** for lines that start with # we check that it is command, i.e. starts with ##
+** to assign start and end. We might implement other commands, as well.
+** in the *line = assign_start_end_to_hashmap(..., *line, ...)
+** the next (!) line from stdin is returned. In case it's not assigned,
+** NULL is returned.
+** There is no possibility to have another ##start or ##end in following lines.
+** If this is the case return false
+** after ft_strcmp(*line, "##start") or ft_strcmp(*line, "##end")
+** the next line is returned
+** during the last else if we deal only with comment
 */
 
-t_bool link_neighbour(t_vertex *dest, t_vertex *src)
+t_bool	is_command(t_map *f, char **line)
 {
-	t_linked *list_elem;
-
-	if ((list_elem = (t_linked *)malloc(sizeof(t_linked))) == NULL)
-		return (false);
-
-	list_elem->next = NULL;
-	list_elem->data = src->order;
-
-	if (dest->neighbour == NULL)
-		dest->neighbour = list_elem;
-	else
+	if (ft_strcmp(*line, "##start") == 0 && f->flag_start == false)
 	{
-		list_elem->next = dest->neighbour;
-		dest->neighbour = list_elem;
+		if ((*line = assign_start_end_to_hashmap(f, *line, begin)) == NULL)
+			return (false);
+		f->flag_start = true;
+	}
+	else if (ft_strcmp(*line, "##end") == 0 && f->flag_end == false)
+	{
+		if ((*line = assign_start_end_to_hashmap(f, *line, end)) == NULL)
+			return (false);
+		f->flag_end = true;
+	}
+	else if ((ft_strcmp(*line, "##start") == 0 && f->flag_start == true) ||
+		(ft_strcmp(*line, "##end") == 0 && f->flag_end == true))
+	{
+		free(line);
+		return (false);
 	}
 	return (true);
 }
-
-
-//in the link v1-v2
-//assigns v2 as neighbor of v1 and vice verses
-//if error, returns false
-t_bool	parse_links(t_map *f, char *line, char *dash)
-{
-	int n;
-	int i;
-	t_hash *tmp_h;
-	t_vert *list;
-	t_vertex *v1;
-	t_vertex *v2;
-
-	if (f->flag_rooms == false) //first, we set that the rooms are finished
-		f->flag_rooms = true;
-	if ((v1 = find_vertex(f, line, dash - line)) == NULL)
-		return (false);
-	ft_printf("v1->name = %s", v1->name);
-	if ((v2 = find_vertex(f, dash + 1, ft_strlen(dash + 1))) == NULL)
-		return (false);
-	ft_printf(" %s\n", v2->name);
-	if (!(ft_strcmp(v1->name, v2->name)))
-		return (false);
-	list-
-	link_neighbour(v1, v2); //?
-	link_neighbour(v2, v1); //?
-	if (f->flag_links == false)
-		f->flag_links = true;
-	return (true);
-}
-
 
 /*
-** alocate memory of links for neighbours.
-** then assign to each node (which is type of t_linked)
-** its own neighbour
+** we check the line if it connects two rooms
+** (1) there is '-' and no 'L'.
+** the room if made up of alnum or '_'
 */
-t_bool	graph_fill_in(t_map *f)
+
+t_bool	is_edge(char *line)
+{
+	int	i;
+
+	i = 0;
+	while (line[i] != '\0' && line[i] != '-')
+	{
+		if (!ft_isalnum(line[i]) && line[i] != '_')
+			return (false);
+		i++;
+	}
+	if (line[i++] != '-')
+		return (false);
+	while (line[i] != '\0')
+	{
+		if (!ft_isalnum(line[i]) && line[i] != '_')
+			return (false);
+		i++;
+	}
+	return (true);
+}
+
+/*
+** this function checks if the str is room.
+** the str[i] should be letter or number or '_'
+** in that case it returns true, else false
+*/
+
+t_bool	is_room(char *str)
 {
 	int i;
-	t_hash *tmp_h;
-	t_vertex *tmp_v;
-	t_linked *tmp_lst;
 
-	if (!(f->g = (t_linked **)malloc(sizeof(t_linked *) * f->max_order)))
-		return (false);
-	i = -1;
-	while (++i < f->hash_size)
+	i = 0;
+	while (str[i])
 	{
-		tmp_h = f->first_raw[i];
-		while (tmp_h)
-		{
-			tmp_v = tmp_h->v;
-			tmp_lst = tmp_v->neighbour;
-			f->g[tmp_v->order] = tmp_v->neighbour;
-			tmp_h = tmp_h->next;
-		}
+		if ((ft_isalnum(str[i]) && str[i] != 'L') ||
+		str[i] == '_' || str[i] == ' ')
+			i++;
+		else
+			return (false);
 	}
+	if (i == 0)
+		return (false);
 	return (true);
 }

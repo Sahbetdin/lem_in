@@ -1,37 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fun_vertex.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/05/24 09:18:29 by btrifle           #+#    #+#             */
+/*   Updated: 2020/05/26 08:40:43 by btrifle          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../lem_in.h"
 
 /*
-** initialize vertex.
-** all it's fields are zeros except
-** name which is ft_strdup(line)
+** we search the string *start_search of length n in hashmap
+** and return vertex which name coincides with *start_search
+** of length n
+** flag_found for searching links
 */
 
-t_vertex *vertex_init(char *name, int len, t_status st, int order)
-{
-	t_vertex *v_tmp;
-
-	if (!(v_tmp = (t_vertex *)malloc(sizeof(t_vertex))))
-		exit(0);
-	v_tmp->name = ft_strndup(name, len);
-	v_tmp->len = len;
-	v_tmp->neighbour = NULL;
-	v_tmp->status = st;
-	v_tmp->order = order;
-	return (v_tmp);
-}
-
-
-//in hashmap searches the string *start_search of length n
-//and returns vertex which name coincides with *start_search
-// of length n
 t_vertex	*find_vertex(t_map *f, char *start_search, int n)
 {
-	int i;
-	t_vertex *v1;
-	t_bool flag_found; //for searching links
-	t_hash *tmp_h;
-	int place;
-	
+	int			i;
+	t_vertex	*v1;
+	t_bool		flag_found;
+	t_hash		*tmp_h;
+	int			place;
+
 	i = 0;
 	flag_found = false;
 	v1 = NULL;

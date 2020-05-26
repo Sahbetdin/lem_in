@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: btrifle <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/09 21:35:37 by btrifle           #+#    #+#             */
-/*   Updated: 2019/09/25 18:14:01 by btrifle          ###   ########.fr       */
+/*   Updated: 2020/05/25 20:36:26 by btrifle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <string.h>
 # include <fcntl.h>
 # include <stdarg.h>
-# define BUFF_SIZE 16
+# define BUFF_SIZE 32
 
 typedef struct		s_list
 {
@@ -25,6 +25,13 @@ typedef struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct		s_arr
+{
+	int				fd;
+	char			*rest;
+	struct s_arr	*next;
+}					t_arr;
 
 typedef struct		s_s
 {
@@ -96,6 +103,8 @@ int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_cut_backspaces(const char *s);
 int					ft_atoi(const char *str);
+long long			ft_atol(const char *str);
+char				*ft_atoi_pointer(const char *str, int *n);
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
 int					ft_isalnum(int c);
@@ -138,7 +147,6 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 char				**trim(char *s, char ch);
 int					get_next_line(const int fd, char **line);
-
 /*
 ** arithm.c
 */
@@ -163,10 +171,6 @@ int					ft_negative_double_inf(void);
 void				ft_put_zeros_backsp(t_s *sp);
 int					ft_putchar_c(char c, t_s *sp);
 size_t				ft_strlen(const char *s);
-/*
-** functions2.c
-*/
-int					ft_atoi2(const char *str, char *end);
 /*
 ** functions3.c
 */

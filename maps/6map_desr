@@ -1,0 +1,21 @@
+description of 6.map
+hash table
+
+0:	7; st: 2; ord: 6->nil
+	2; st: 1; ord: 1->nil
+NULL
+
+1:	10; st: 1; ord: 9->nil
+	 8; st: 1; ord: 7->nil
+	 3; st: 1; ord: 2->nil
+NULL
+
+2: 	9; st: 1; ord: 8->nil
+	4; st: 1; ord: 3->nil
+NULL
+
+3: 5; st: 1; ord: 4->nil
+NULL
+
+4:	6; st: 1; ord: 5->nil
+	1; st: 1; ord: 0->nil

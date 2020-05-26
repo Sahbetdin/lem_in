@@ -1,114 +1,133 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   read_map1.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/05/14 15:16:14 by ogeonosi          #+#    #+#             */
+/*   Updated: 2020/05/26 17:13:31 by btrifle          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../lem_in.h"
 
-t_bool 	is_ants(char *line)
-{
-	int	i;
+/*
+** if anything except digit or '+' or ' ' then return false
+** otherwise line is ok and ready for ft_atoi, return true
+** I know that we check the empty line in previous line, but
+** for some reason we check it one more time here
+** if false, we free(line) in the read function,
+** possibly in main.
+** if (*i_addr == 0) //if the line is zero length return false
+*/
 
-	i = 0;
-	while (line[i] != '\0')
-		if (!ft_isdigit(line[i++]))
+t_bool	check_for_digits_in_line(char *line, int *i_addr)
+{
+	while (line[*i_addr] != '\0')
+	{
+		if (!(ft_isdigit(line[*i_addr]) || line[*i_addr] == '+'
+		|| line[*i_addr] == ' '))
 			return (false);
+		(*i_addr)++;
+	}
+	if (*i_addr == 0)
+		return (false);
 	return (true);
 }
 
-void	is_command(t_map *f, char **line)
+/*
+** in first line we check: (1) it's not empty, (2) it contains
+** only digits, possibly + sign, or backspace, (3) then we atoi
+** the line. (4) if ants number is 0 we return false,
+** (5) if there is a number and it's int32 then we
+** set flag_ants to true and return true
+** if OK, we FREE the line
+*/
+
+t_bool	check_ant_line(t_map *f, char *line)
 {
-	if  (ft_strcmp(*line, "##start") == 0 && f->flag_start == false) {
-		*line = assign_start_end_to_hashmap(f, *line, begin); //the other line is returned
-		f->flag_start = true;
-	}
-	else if (ft_strcmp(*line, "##end") == 0 && f->flag_end == false) {
-		*line = assign_start_end_to_hashmap(f, *line, end); //the other line is returned
-		f->flag_end = true;
-	}
-	ft_strdel(line);
-}
-
-t_bool is_edge(char *line)
-{
-	int	i;
-
-	i = 0;
-	while (line[i] != '\0' && line[i] != '-')
-	{
-		if (!ft_isalnum(line[i]) && line[i] != '_')
-			return (false);
-		i++;
-	}
-	if (line[i++] != '-')
-		return (false);
-	while (line[i] != '\0')
-	{
-		if (!ft_isalnum(line[i]) && line[i] != '_')
-			return (false);
-		i++;
-	}
-	return (true);
-}
-
-t_bool is_node(char *line)
-{
-	int	i;
-
-	i = 0;
-	if (line[i] == 'L')
-		return (false);
-	while (line[i] != '\0' && line[i] != ' ')
-	{
-		if (!ft_isalnum(line[i]) && line[i] != '_')
-			return (false);
-		i++;
-	}
-	if (line[i++] != ' ')
-		return (false);
-	while (line[i] != '\0' && line[i] != ' ')
-		if (!ft_isdigit(line[i++]))
-			return (false);
-	if (line[i++] != ' ')
-		return (false);
-	while (line[i] != '\0')
-		if (!ft_isdigit(line[i++]))
-			return (false);
-	return (true);
-}
-
-
-t_bool	read_map(t_map *f)
-{
-	t_bool	edge;
-	t_bool	node;
+	int		i;
 	int		res_gnl;
-	char	*line;
+
+	res_gnl = get_next_line(0, &line);
+	if (res_gnl == 0)
+		return (false);
+	i = 0;
+	if (check_for_digits_in_line(line, &i) == false)
+		return (false);
+	f->ants = ft_atoi(line);
+	free(line);
+	if (f->ants <= 0)
+		return (false);
+	f->flag_ants = true;
+	return (true);
+}
+
+/*
+** in 'assign_line_to_hashmap' room names are parsed
+*/
+
+t_bool	assign_room(t_map *f, char *line)
+{
+	if (assign_line_to_hashmap(f, middle, line) == false)
+		return (false);
+	else if (f->flag_rooms == true)
+	{
+		ft_printf("ERROR  or more rooms come after links\n");
+		return (false);
+	}
+	return (true);
+}
+
+/*
+** There was || res_gnl == 0 in gnl.
+** means that there is one empty line
+*/
+
+t_bool	check_flags_assigned_free_last_line(t_map *f, char *line)
+{
+	ft_strdel(&line);
+	if (f->flag_start == false || f->flag_end == false
+	|| f->flag_links == false)
+		return (false);
+	return (true);
+}
+
+/*
+** if during gnl we encounter false, we free it in main function
+** that's why we need line link from main function
+** otherwise we free the line here
+** if (!check_ant_line(f, line)) //if ok, then f->flag_ants = true
+** if (is_command(f, &line) == false) //if the line with # wasn't
+** 		parsed then bad. Убрал || f->flag_rooms == true)
+*/
+
+t_bool	read_map(t_map *f, char *line)
+{
+	int		res_gnl;
+	char	*dash;
 
 	if (!check_ant_line(f, line))
 		return (false);
-	while ((res_gnl = get_next_line(f->fd, &line)) > 0)
+	while ((res_gnl = get_next_line(0, &line)) > 0)
 	{
-		if (is_ants(line))
+		if (line[0] == '#')
 		{
-			if (f->ants != 0 || ft_atoi(line) < 0)
-				return (false);
-			f->ants = ft_atoi(line);
-			if (f->ants == 0)
+			if (is_command(f, &line) == false)
 				return (false);
 		}
-		else if (line[0] == '#')
-			is_command(f, &line);
-		else if (is_node(line))
+		else if (is_room(line))
 		{
-			if (assign_line_to_hashmap(f, middle, line, f->max_order) == false)
+			if (assign_room(f, line) == false)
 				return (false);
 		}
-		else if (is_edge(line))
-		{
-			if (parse_links(f, line, ft_strchr(line, '-')) == false)
-				return(false);
-		}
+		else if ((dash = ft_strchr(line, '-')) &&
+		parse_links(f, line, dash) == false)
+			return (false);
 		ft_strdel(&line);
 	}
-	if (f->flag_start == false || f->flag_end == false
-	|| f->flag_links == false || res_gnl == -1)
+	if (check_flags_assigned_free_last_line(f, line) == false)
 		return (false);
-	ft_strdel(&line);
 	return (true);
 }

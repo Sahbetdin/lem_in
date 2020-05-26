@@ -3,14 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: btrifle <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 14:00:59 by btrifle           #+#    #+#             */
-/*   Updated: 2019/09/23 18:24:23 by btrifle          ###   ########.fr       */
+/*   Updated: 2020/05/25 11:29:12 by btrifle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+size_t	ft_len(char const *str)
+{
+	if (str == NULL)
+		return (0);
+	return (ft_strlen(str));
+}
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -19,10 +26,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	k;
 	char	*ptr;
 
-	if (!s1 || !s2)
+	if (s1 == NULL && s2 == NULL)
 		return (NULL);
-	i = ft_strlen(s1);
-	j = ft_strlen(s2);
+	i = ft_len(s1);
+	j = ft_len(s2);
 	if (!(ptr = (char *)malloc(sizeof(char) * (i + j + 1))))
 		return (NULL);
 	k = 0;
@@ -31,7 +38,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		ptr[k] = s1[k];
 		k++;
 	}
-	while (k < (i + j))
+	while (k < i + j)
 	{
 		ptr[k] = s2[k - i];
 		k++;
