@@ -6,7 +6,7 @@
 /*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 09:18:19 by btrifle           #+#    #+#             */
-/*   Updated: 2020/05/26 08:35:52 by btrifle          ###   ########.fr       */
+/*   Updated: 2020/05/27 17:25:18 by btrifle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	print_graph(t_linked **g, int n)
 		i++;
 	}
 }
+
 
 void	print_bfs_order(int *arr, int n)
 {

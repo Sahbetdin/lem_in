@@ -6,7 +6,7 @@
 /*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 09:17:58 by btrifle           #+#    #+#             */
-/*   Updated: 2020/05/26 18:41:52 by btrifle          ###   ########.fr       */
+/*   Updated: 2020/05/28 11:58:53 by btrifle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	farm_init(t_map *f)
 	f->arc2 = NULL;
 	f->pos = NULL;
 	f->len = NULL;
+	f->ants_in_paths = NULL;
 }
 
 /*

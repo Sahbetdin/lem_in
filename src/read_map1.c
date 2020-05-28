@@ -6,7 +6,7 @@
 /*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/14 15:16:14 by ogeonosi          #+#    #+#             */
-/*   Updated: 2020/05/26 17:13:31 by btrifle          ###   ########.fr       */
+/*   Updated: 2020/05/27 09:41:01 by btrifle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,12 +115,19 @@ t_bool	read_map(t_map *f, char *line)
 		if (line[0] == '#')
 		{
 			if (is_command(f, &line) == false)
+			{
 				return (false);
+
+			}
+
 		}
 		else if (is_room(line))
 		{
 			if (assign_room(f, line) == false)
+			{
 				return (false);
+
+			}
 		}
 		else if ((dash = ft_strchr(line, '-')) &&
 		parse_links(f, line, dash) == false)

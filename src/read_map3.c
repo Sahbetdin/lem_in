@@ -6,7 +6,7 @@
 /*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 09:19:36 by btrifle           #+#    #+#             */
-/*   Updated: 2020/05/26 18:03:29 by btrifle          ###   ########.fr       */
+/*   Updated: 2020/05/26 23:25:56 by btrifle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int		min_of_two(int a, int b)
 ** its own neighbour
 */
 
+
 t_bool	graph_fill_in(t_map *f)
 {
 	int			i;
@@ -50,6 +51,12 @@ t_bool	graph_fill_in(t_map *f)
 		ft_printf("ERROR memory allocation for graph(t_linked **)\n");
 		return (false);
 	}
+	if (!(f->rooms_ordered = (char **)malloc(sizeof(char *) * f->max_order)))
+	{
+		free(f->g);
+		ft_printf("ERROR memory allocation for rooms_ordered(char **)\n");
+		return (false);
+	}
 	i = -1;
 	while (++i < f->hash_size)
 	{
@@ -59,6 +66,7 @@ t_bool	graph_fill_in(t_map *f)
 			tmp_v = tmp_h->v;
 			tmp_lst = tmp_v->neighbour;
 			f->g[tmp_v->order] = tmp_v->neighbour;
+			f->rooms_ordered[tmp_v->order] = tmp_v->name;
 			tmp_h = tmp_h->next;
 		}
 	}

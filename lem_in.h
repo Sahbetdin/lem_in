@@ -6,7 +6,7 @@
 /*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 21:35:37 by btrifle           #+#    #+#             */
-/*   Updated: 2020/05/26 18:47:02 by btrifle          ###   ########.fr       */
+/*   Updated: 2020/05/28 19:47:17 by btrifle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,7 @@ typedef struct		s_map
 	int				end_vertex;
 	t_hash			**first_raw;
 	t_linked		**g;
+	char			**rooms_ordered;
 	int				*bfs_order;
 	int				*shortest_path;
 	int				current_path;
@@ -107,13 +108,14 @@ typedef struct		s_map
 	t_linked		*arc2;
 	t_position		*pos;
 	int				*len;
+	int				*ants_in_paths;
 }					t_map;
 /*
 ** paths1.c
 */
 void				path_assign(t_map *f, int *arr);
 void				set_all_ant_initial_location(t_map *f);
-int					move_one_step(t_map *f);
+t_bool				move_one_step(t_map *f);
 void				assign_paths_to_start(t_map *f, int *ants_n);
 t_bool				caravane_goes_farward(t_map *f);
 /*

@@ -6,7 +6,7 @@
 /*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 06:34:15 by btrifle           #+#    #+#             */
-/*   Updated: 2020/05/26 08:43:45 by btrifle          ###   ########.fr       */
+/*   Updated: 2020/05/28 19:56:37 by btrifle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,19 +101,27 @@ t_bool	set_path_lengths(t_map *f)
 	int i;
 	int j;
 
-	if ((f->len = (int *)malloc(sizeof(int) * f->current_path)) == NULL)
+	ft_printf("IN SET_PATH_LENGTHS: %d\n", f->current_path);
+
+	if ((f->len = (int *)malloc(sizeof(int) * f->current_path + 1)) == NULL)
 		return (false);
 	i = 0;
-	while (i <= f->current_path)
+	while (i < f->current_path + 1)
 	{
 		j = 0;
 		while (j < f->max_order && f->paths[i][j] != -1)
 			j++;
-		f->len[i] = j - 1;
+		f->len[i] = j;
 		i++;
 	}
 	if ((f->pos = (t_position *)malloc(sizeof(t_position) * f->ants)) == NULL)
 	{
+		free(f->len);
+		return (false);
+	}
+	if ((f->ants_in_paths = (int *)malloc(sizeof(int) * f->current_path + 1)) == NULL)
+	{
+		free(f->pos);
 		free(f->len);
 		return (false);
 	}

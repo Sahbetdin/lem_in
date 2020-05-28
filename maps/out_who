@@ -1,0 +1,31 @@
+L0-Att2 L1-Tsq3 L2-Peq6
+L0-Iyv0 L3-Att2 L1-Cyy1 L4-Tsq3 L2-Bzb6 L5-Peq6
+L0-Ouy3 L3-Iyv0 L6-Att2 L1-Ok_0 L4-Cyy1 L7-Tsq3 L2-Ngm1 L5-Bzb6 L8-Peq6
+L0-Ie_9 L3-Ouy3 L6-Iyv0 L1-Qwi4 L4-Ok_0 L7-Cyy1 L9-Tsq3 L2-Ste6 L5-Ngm1 L8-Bzb6 L10-Peq6
+L0-Sme8 L3-Ie_9 L6-Ouy3 L1-Yeo1 L4-Qwi4 L7-Ok_0 L9-Cyy1 L2-K_u2 L5-Ste6 L8-Ngm1 L10-Bzb6
+L0-Vdn6 L3-Sme8 L6-Ie_9 L1-Mdq7 L4-Yeo1 L7-Qwi4 L9-Ok_0 L2-Ixn7 L5-K_u2 L8-Ste6 L10-Ngm1
+L0-Yp_7 L3-Vdn6 L6-Sme8 L1-Jhd6 L4-Mdq7 L7-Yeo1 L9-Qwi4 L2-Xry4 L5-Ixn7 L8-K_u2 L10-Ste6
+L0-Npb1 L3-Yp_7 L6-Vdn6 L1-Fed5 L4-Jhd6 L7-Mdq7 L9-Yeo1 L2-Eqb3 L5-Xry4 L8-Ixn7 L10-K_u2
+L0-Fqk6 L3-Npb1 L6-Yp_7 L1-Zdp9 L4-Fed5 L7-Jhd6 L9-Mdq7 L2-Rod4 L5-Eqb3 L8-Xry4 L10-Ixn7
+L0-Yi_0 L3-Fqk6 L6-Npb1 L1-Khz0 L4-Zdp9 L7-Fed5 L9-Jhd6 L2-Ohh8 L5-Rod4 L8-Eqb3 L10-Xry4
+L0-Kxe5 L3-Yi_0 L6-Fqk6 L1-Mlr6 L4-Khz0 L7-Zdp9 L9-Fed5 L2-Hwq2 L5-Ohh8 L8-Rod4 L10-Eqb3
+L0-Kzh1 L3-Kxe5 L6-Yi_0 L1-Sga1 L4-Mlr6 L7-Khz0 L9-Zdp9 L2-Wpc9 L5-Hwq2 L8-Ohh8 L10-Rod4
+L0-Ky_9 L3-Kzh1 L6-Kxe5 L1-Bal7 L4-Sga1 L7-Mlr6 L9-Khz0 L2-Bqd0 L5-Wpc9 L8-Hwq2 L10-Ohh8
+L0-Mgn2 L3-Ky_9 L6-Kzh1 L1-Ppn9 L4-Bal7 L7-Sga1 L9-Mlr6 L2-Kxe0 L5-Bqd0 L8-Wpc9 L10-Hwq2
+L0-Kot0 L3-Mgn2 L6-Ky_9 L1-Ivt1 L4-Ppn9 L7-Bal7 L9-Sga1 L2-Yck7 L5-Kxe0 L8-Bqd0 L10-Wpc9
+L0-Teq6 L3-Kot0 L6-Mgn2 L1-Mds7 L4-Ivt1 L7-Ppn9 L9-Bal7 L2-Dyh4 L5-Yck7 L8-Kxe0 L10-Bqd0
+L0-Y_t3 L3-Teq6 L6-Kot0 L1-Jy_8 L4-Mds7 L7-Ivt1 L9-Ppn9 L2-Qwh0 L5-Dyh4 L8-Yck7 L10-Kxe0
+L0-Pva0 L3-Y_t3 L6-Teq6 L1-Nkc5 L4-Jy_8 L7-Mds7 L9-Ivt1 L2-Qx_9 L5-Qwh0 L8-Dyh4 L10-Yck7
+L0-Yjl3 L3-Pva0 L6-Y_t3 L1-Gny7 L4-Nkc5 L7-Jy_8 L9-Mds7 L2-T_b5 L5-Qx_9 L8-Qwh0 L10-Dyh4
+L0-Ino0 L3-Yjl3 L6-Pva0 L1-Wnn1 L4-Gny7 L7-Nkc5 L9-Jy_8 L2-Bff2 L5-T_b5 L8-Qx_9 L10-Qwh0
+L0-Vxx7 L3-Ino0 L6-Yjl3 L1-Zqw3 L4-Wnn1 L7-Gny7 L9-Nkc5 L2-Cus4 L5-Bff2 L8-T_b5 L10-Qx_9
+L0-R_w7 L3-Vxx7 L6-Ino0 L1-Hty1 L4-Zqw3 L7-Wnn1 L9-Gny7 L2-D__3 L5-Cus4 L8-Bff2 L10-T_b5
+L0-Wnk1 L3-R_w7 L6-Vxx7 L1-Mfa1 L4-Hty1 L7-Zqw3 L9-Wnn1 L2-Rkk3 L5-D__3 L8-Cus4 L10-Bff2
+L0-Kw_5 L3-Wnk1 L6-R_w7 L1-Q_y4 L4-Mfa1 L7-Hty1 L9-Zqw3 L2-V_v4 L5-Rkk3 L8-D__3 L10-Cus4
+L0-W_v2 L3-Kw_5 L6-Wnk1 L1-Rwm3 L4-Q_y4 L7-Mfa1 L9-Hty1 L2-Wmh5 L5-V_v4 L8-Rkk3 L10-D__3
+L0-Dp_1 L3-W_v2 L6-Kw_5 L1-N_c4 L4-Rwm3 L7-Q_y4 L9-Mfa1 L2-Pnc9 L5-Wmh5 L8-V_v4 L10-Rkk3
+L0-Cwe9 L3-Dp_1 L6-W_v2 L1-Nsg8 L4-N_c4 L7-Rwm3 L9-Q_y4 L2-Dfv1 L5-Pnc9 L8-Wmh5 L10-V_v4
+L0-Caj4 L3-Cwe9 L6-Dp_1 L1-Zpq4 L4-Nsg8 L7-N_c4 L9-Rwm3 L2-Zpq4 L5-Dfv1 L8-Pnc9 L10-Wmh5
+L0-Zpq4 L3-Caj4 L6-Cwe9 L4-Zpq4 L7-Nsg8 L9-N_c4 L5-Zpq4 L8-Dfv1 L10-Pnc9
+L3-Zpq4 L6-Caj4 L7-Zpq4 L9-Nsg8 L8-Zpq4 L10-Dfv1
+L6-Zpq4 L9-Zpq4 L10-Zpq4
