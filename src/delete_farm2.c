@@ -6,7 +6,7 @@
 /*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 09:18:24 by btrifle           #+#    #+#             */
-/*   Updated: 2020/05/26 18:52:22 by btrifle          ###   ########.fr       */
+/*   Updated: 2020/05/29 18:03:59 by btrifle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,11 +100,26 @@ void	del_hash_table(t_map *f)
 	}
 }
 
-void	farm_delete(t_map *f)
+void	del_ants_in_paths_len_pos(t_map *f)
 {
-	delete_hash_table(f->first_raw, f->hash_size);
-	del_bfs_order(f);
-	del_shortest_path(f);
-	del_graph(f);
-	del_paths(f);
+	if (f->ants_in_paths)
+	{
+		free(f->ants_in_paths);
+		f->ants_in_paths = NULL;
+	}
+	if (f->len)
+	{
+		free(f->len);
+		f->len = NULL;
+	}
+	if (f->pos)
+	{
+		free(f->pos);
+		f->pos = NULL;
+	}
+	if (f->rooms_ordered)
+	{
+		free(f->rooms_ordered);
+		f->rooms_ordered = NULL;
+	}
 }

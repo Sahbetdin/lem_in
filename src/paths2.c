@@ -6,7 +6,7 @@
 /*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 06:34:15 by btrifle           #+#    #+#             */
-/*   Updated: 2020/05/28 19:56:37 by btrifle          ###   ########.fr       */
+/*   Updated: 2020/05/29 17:51:17 by btrifle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,44 +92,7 @@ t_bool	init_bfs_order_short_path_paths(t_map *f)
 	return (true);
 }
 
-/*
-** watch out! 	while (i <= f->current_path) <= !!!
-*/
-
-t_bool	set_path_lengths(t_map *f)
-{
-	int i;
-	int j;
-
-	ft_printf("IN SET_PATH_LENGTHS: %d\n", f->current_path);
-
-	if ((f->len = (int *)malloc(sizeof(int) * f->current_path + 1)) == NULL)
-		return (false);
-	i = 0;
-	while (i < f->current_path + 1)
-	{
-		j = 0;
-		while (j < f->max_order && f->paths[i][j] != -1)
-			j++;
-		f->len[i] = j;
-		i++;
-	}
-	if ((f->pos = (t_position *)malloc(sizeof(t_position) * f->ants)) == NULL)
-	{
-		free(f->len);
-		return (false);
-	}
-	if ((f->ants_in_paths = (int *)malloc(sizeof(int) * f->current_path + 1)) == NULL)
-	{
-		free(f->pos);
-		free(f->len);
-		return (false);
-	}
-	set_all_ant_initial_location(f);
-	return (true);
-}
-
-void	add_start_end_to_paths(t_map *f)
+void	count_paths_length(t_map *f)
 {
 	int i;
 	int j;
@@ -138,20 +101,21 @@ void	add_start_end_to_paths(t_map *f)
 	while (i <= f->current_path)
 	{
 		j = 0;
-		while (j < f->max_order)
-		{
-			if (f->paths[i][j] == -1)
-				break ;
+		while (j < f->max_order && f->paths[i][j] != -1)
 			j++;
-		}
-		if (j + 1 < f->max_order)
-			f->paths[i][j + 1] = f->end_vertex;
-		while (j > 0)
-		{
-			f->paths[i][j] = f->paths[i][j - 1];
-			j--;
-		}
-		f->paths[i][0] = f->start_vertex;
+		f->len[i] = j;
+		i++;
+	}
+}
+
+void	set_0_ants_in_paths(t_map *f)
+{
+	int i;
+
+	i = 0;
+	while (i <= f->current_path)
+	{
+		f->ants_in_paths[i] = 0;
 		i++;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 21:35:37 by btrifle           #+#    #+#             */
-/*   Updated: 2020/05/28 19:47:17 by btrifle          ###   ########.fr       */
+/*   Updated: 2020/05/29 18:31:23 by btrifle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,24 +113,36 @@ typedef struct		s_map
 /*
 ** paths1.c
 */
-void				path_assign(t_map *f, int *arr);
-void				set_all_ant_initial_location(t_map *f);
-t_bool				move_one_step(t_map *f);
-void				assign_paths_to_start(t_map *f, int *ants_n);
-t_bool				caravane_goes_farward(t_map *f);
+// void				assign_paths_to_start(t_map *f, int *ants_n);
+// t_bool				caravane_goes_farward(t_map *f);
+void	assign_one_ant(t_map *f, int *j_addr, int *ants_n);
+void	count_ants_in_paths(t_map *f, int *ants_n);
+void	set_arr_temporarly(t_map *f, int *arr);
+void	set_ants_to_paths_tmp(t_map *f, t_bool flag, int *arr, int *ants_n);
+t_bool	set_and_move_ants(t_map *f, int *ants_n);
+
 /*
 ** paths2.c
 */
 t_bool				init_paths_individually(t_map *f);
 t_bool				init_paths(t_map *f);
 t_bool				init_bfs_order_short_path_paths(t_map *f);
-t_bool				set_path_lengths(t_map *f);
-void				add_start_end_to_paths(t_map *f);
+void				count_paths_length(t_map *f);
+void				set_0_ants_in_paths(t_map *f);
 /*
 ** paths3.c
 */
 void				copy_paths(int *dest_path, int *src_path, int n);
 void				reverse_array(int *arr, int n);
+void				path_assign(t_map *f, int *arr);
+void				set_all_ant_initial_location(t_map *f);
+t_bool				move_one_step(t_map *f);
+/*
+** paths4.c
+*/
+t_bool				init_path_lengths(t_map *f);
+void				add_start_end_to_paths(t_map *f);
+t_bool				caravane_goes_farward(t_map *f);
 /*
 ** find_other_paths.c
 */
@@ -251,6 +263,11 @@ void				delete_names(t_hash **h, int hash_size);
 void				delete_adj_list(t_hash **h, int hash_size);
 void				del_paths(t_map *f);
 void				del_hash_table(t_map *f);
+void				del_ants_in_paths_len_pos(t_map *f);
+
+/*
+** delete_farm3.c
+*/
 void				farm_delete(t_map *f);
 /*
 ** fun_edges.c

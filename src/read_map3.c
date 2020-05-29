@@ -6,7 +6,7 @@
 /*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 09:19:36 by btrifle           #+#    #+#             */
-/*   Updated: 2020/05/26 23:25:56 by btrifle          ###   ########.fr       */
+/*   Updated: 2020/05/29 18:04:15 by btrifle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,20 +32,8 @@ int		min_of_two(int a, int b)
 	return (b);
 }
 
-/*
-** alocate memory of links for neighbours.
-** then assign to each node (which is type of t_linked)
-** its own neighbour
-*/
-
-
-t_bool	graph_fill_in(t_map *f)
+t_bool	allocate_graph_and_rooms_ordered(t_map *f)
 {
-	int			i;
-	t_hash		*tmp_h;
-	t_vertex	*tmp_v;
-	t_linked	*tmp_lst;
-
 	if (!(f->g = (t_linked **)malloc(sizeof(t_linked *) * f->max_order)))
 	{
 		ft_printf("ERROR memory allocation for graph(t_linked **)\n");
@@ -57,6 +45,24 @@ t_bool	graph_fill_in(t_map *f)
 		ft_printf("ERROR memory allocation for rooms_ordered(char **)\n");
 		return (false);
 	}
+	return (true);
+}
+
+/*
+** alocate memory of links for neighbours.
+** then assign to each node (which is type of t_linked)
+** its own neighbour
+*/
+
+t_bool	graph_fill_in(t_map *f)
+{
+	int			i;
+	t_hash		*tmp_h;
+	t_vertex	*tmp_v;
+	t_linked	*tmp_lst;
+
+	if (allocate_graph_and_rooms_ordered(f) == false)
+		return (false);
 	i = -1;
 	while (++i < f->hash_size)
 	{

@@ -6,7 +6,7 @@
 /*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/26 16:48:24 by btrifle           #+#    #+#             */
-/*   Updated: 2020/05/27 12:47:51 by btrifle          ###   ########.fr       */
+/*   Updated: 2020/05/29 18:00:13 by btrifle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,23 +101,8 @@ void	b_1(t_map *f)
 
 void	b_0(t_map *f)
 {
-	// ft_printf("before copying 0th: ");
-	// print_path(f->paths[0], f->max_order);
-	// ft_printf("before copying 1st: ");
-	// print_path(f->paths[1], f->max_order);
-	// ft_printf("before copying shortest: ");
-	// print_path(f->shortest_path, f->max_order);
-	
 	copy_paths(f->paths[1], f->paths[0], f->max_order);
 	copy_paths(f->paths[0], f->shortest_path, f->max_order);
-
-	// ft_printf("after copying 0th: ");
-	// print_path(f->paths[0], f->max_order);
-	// ft_printf("after copying 1st: ");
-	// print_path(f->paths[1], f->max_order);
-	// ft_printf("after copying shortest: ");
-	// print_path(f->shortest_path, f->max_order);
-	
 	delete_trace(f, f->paths[0]);
 	delete_trace(f, f->paths[1]);
 	f->current_path = 1;

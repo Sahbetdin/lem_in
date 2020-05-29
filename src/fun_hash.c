@@ -6,7 +6,7 @@
 /*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 09:17:52 by btrifle           #+#    #+#             */
-/*   Updated: 2020/05/27 09:42:28 by btrifle          ###   ########.fr       */
+/*   Updated: 2020/05/29 18:10:06 by btrifle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,16 @@ void	assign_start_end_status(t_map *f, t_status st)
 	f->max_order++;
 }
 
+t_bool	check_if_line_ends_backspace(char *str)
+{
+	if (*str != '\0')
+	{
+		ft_printf("ERROR: one line ends with backspace\n");
+		return (false);
+	}
+	return (true);
+}
+
 /*
 ** function creates v vertex and assigns st status (start,middle,end)
 ** name of vertex *line [without coordinates!], and order in graph
@@ -62,7 +72,6 @@ t_bool	assign_line_to_hashmap(t_map *f, t_status st, char *line)
 
 	if (!(tmp_h = (t_hash *)malloc(sizeof(t_hash))))
 		return (false);
-
 	tmp_h->next = NULL;
 	if ((backsp = ft_strchr(line, ' ')) == NULL ||
 	((tmp_h->v = vertex_init(line, backsp - line, st, f->max_order))) == NULL)
@@ -78,11 +87,8 @@ t_bool	assign_line_to_hashmap(t_map *f, t_status st, char *line)
 	}
 	backsp = ft_atoi_pointer(backsp, &(tmp_h->v->x));
 	backsp = ft_atoi_pointer(backsp, &(tmp_h->v->y));
-	if (*backsp != '\0')
-	{
-		ft_printf("ERROR: one line ends with backspace\n");
+	if (check_if_line_ends_backspace(backsp) == false)
 		return (false);
-	}
 	return (true);
 }
 

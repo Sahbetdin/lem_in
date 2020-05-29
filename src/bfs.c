@@ -6,7 +6,7 @@
 /*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/24 21:34:05 by btrifle           #+#    #+#             */
-/*   Updated: 2020/05/27 12:28:52 by btrifle          ###   ########.fr       */
+/*   Updated: 2020/05/29 18:11:16 by btrifle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,7 +130,5 @@ t_bool	bfs(t_map *f, int start)
 	arr_fill_in_with_value(f->bfs_order, f->max_order, -1);
 	bfs_main(f, que, start);
 	free(que);
-	// print_bfs_order(f->bfs_order, f->max_order);
-	// print_all_paths(f->paths, f->current_path, f->max_order);
 	return (true);
 }

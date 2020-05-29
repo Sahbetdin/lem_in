@@ -6,7 +6,7 @@
 /*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/26 17:04:23 by btrifle           #+#    #+#             */
-/*   Updated: 2020/05/27 12:46:22 by btrifle          ###   ########.fr       */
+/*   Updated: 2020/05/29 18:33:18 by btrifle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,8 @@ t_bool	work_with_bfs(t_map *f)
 		farm_delete(f);
 		return (false);
 	}
-	ft_printf("in work... f->current_path = %d\n", f->current_path);
 	path_assign(f, f->paths[0]);
-	ft_printf("in work... f->paths[0] = ");
 	print_path(f->paths[0], f->max_order);
-
-
 	put_back_removed_arcs(f);
 	if ((b = find_shortest_path_vertice_in_current_path(f)) == 2)
 		b_2(f);
