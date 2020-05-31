@@ -6,7 +6,7 @@
 /*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/26 16:48:24 by btrifle           #+#    #+#             */
-/*   Updated: 2020/05/30 00:02:36 by btrifle          ###   ########.fr       */
+/*   Updated: 2020/05/31 13:05:27 by btrifle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ char	find_shortest_path_vertice_in_current_path(t_map *f)
 	int count;
 	int	n_elem;
 
-	
 	count = 0;
 	n_elem = 0;
 	count_rooms_in_current_path(f, &count, &n_elem);

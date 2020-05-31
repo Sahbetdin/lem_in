@@ -6,7 +6,7 @@
 /*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 09:17:58 by btrifle           #+#    #+#             */
-/*   Updated: 2020/05/29 22:55:29 by btrifle          ###   ########.fr       */
+/*   Updated: 2020/05/31 13:06:19 by btrifle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 ** the only place where we allcate memory is hashmap_init
 */
 
-
-	
 void	farm_init(t_map *f)
 {
 	f->ants = 0;

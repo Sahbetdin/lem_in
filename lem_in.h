@@ -6,7 +6,7 @@
 /*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 21:35:37 by btrifle           #+#    #+#             */
-/*   Updated: 2020/05/31 09:17:25 by btrifle          ###   ########.fr       */
+/*   Updated: 2020/05/31 13:15:18 by btrifle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,13 +113,12 @@ typedef struct		s_map
 /*
 ** paths1.c
 */
-// void				assign_paths_to_start(t_map *f, int *ants_n);
-// t_bool				caravane_goes_farward(t_map *f);
-void	assign_one_ant(t_map *f, int *j_addr, int *ants_n);
-void	count_ants_in_paths(t_map *f, int *ants_n);
-void	set_arr_temporarly(t_map *f, int *arr);
-void	set_ants_to_paths_tmp(t_map *f, t_bool flag, int *arr, int *ants_n);
-t_bool	set_and_move_ants(t_map *f, int *ants_n);
+void				assign_one_ant(t_map *f, int *j_addr, int *ants_n);
+void				count_ants_in_paths(t_map *f, int *ants_n);
+void				set_arr_temporarly(t_map *f, int *arr);
+void				set_ants_to_paths_tmp(t_map *f, t_bool flag,
+					int *arr, int *ants_n);
+t_bool				set_and_move_ants(t_map *f, int *ants_n);
 
 /*
 ** paths2.c
@@ -251,28 +250,25 @@ void				delete_node(t_map *f, int node);
 /*
 ** delete_farm1.c
 */
-
 void				delete_hash_map_with_neighbours_without_graph(t_map *f);
 void				delete_hash_map_without_neighbours_with_others(t_map *f);
-
-void				delete_hash_table(t_hash **h, int hash_size);
+void				delete_adj_list(t_hash **h, int hash_size);
+/*
+** delete_farm2.c
+*/
 void				del_bfs_order(t_map *f);
 void				del_shortest_path(t_map *f);
 void				del_graph(t_map *f);
 void				del_name(char *str);
-/*
-** delete_farm2.c
-*/
-void				delete_names(t_hash **h, int hash_size);
-void				delete_adj_list(t_hash **h, int hash_size);
-void				del_paths(t_map *f);
-void				del_hash_table(t_map *f);
-void				del_ants_in_paths_len_pos(t_map *f);
-
+void				del_vertice(t_map *f);
 /*
 ** delete_farm3.c
 */
-void				farm_delete(t_map *f);
+void				del_nodes(t_map *f);
+void				del_raws(t_map *f);
+void				del_rooms(t_map *f);
+void				del_ants_in_paths_len_pos(t_map *f);
+void				del_paths(t_map *f);
 /*
 ** fun_edges.c
 */

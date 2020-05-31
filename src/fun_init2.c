@@ -6,7 +6,7 @@
 /*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 09:18:10 by btrifle           #+#    #+#             */
-/*   Updated: 2020/05/31 09:28:42 by btrifle          ###   ########.fr       */
+/*   Updated: 2020/05/31 13:06:06 by btrifle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ t_bool		initiate_all_variables(t_map *f)
 	farm_init(f);
 	if ((f->first_raw = hashmap_init(f->first_raw, f->hash_size)) == NULL)
 		return (0);
-	flag_read_map = read_map(f, &line);	
+	flag_read_map = read_map(f, &line);
 	if (flag_read_map == false)
 	{
 		ft_printf("ERROR in map\n");

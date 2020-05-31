@@ -6,7 +6,7 @@
 /*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/14 15:16:14 by ogeonosi          #+#    #+#             */
-/*   Updated: 2020/05/30 22:20:57 by btrifle          ###   ########.fr       */
+/*   Updated: 2020/05/31 13:04:43 by btrifle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 t_bool	check_for_digits_in_line(char *line)
 {
 	int i;
-	
+
 	i = 0;
 	while (line[i] != '\0')
 	{
@@ -50,7 +50,7 @@ t_bool	check_for_digits_in_line(char *line)
 t_bool	check_ant_line(t_map *f, char **line)
 {
 	if (get_next_line(0, line) < 0)
-		return (false);		
+		return (false);
 	if (check_for_digits_in_line(*line) == false)
 		return (false);
 	f->ants = ft_atoi(*line);
@@ -108,7 +108,6 @@ t_bool	read_map(t_map *f, char **line)
 
 	if (!check_ant_line(f, line))
 		return (false);
-	// ft_printf("\n\nGOT HERE \n\n");
 	while ((res_gnl = get_next_line(0, line)) > 0)
 	{
 		if ((*line)[0] == '#')

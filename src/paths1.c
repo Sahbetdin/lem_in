@@ -6,7 +6,7 @@
 /*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/16 16:36:15 by btrifle           #+#    #+#             */
-/*   Updated: 2020/05/30 14:43:00 by btrifle          ###   ########.fr       */
+/*   Updated: 2020/05/31 13:03:15 by btrifle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,6 @@ void	set_ants_to_paths_tmp(t_map *f, t_bool flag, int *arr, int *ants_n)
 		}
 		flag = move_one_step(f);
 		print_positions(f);
-	// flag = false;
 	}
 }
 

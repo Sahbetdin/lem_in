@@ -6,7 +6,7 @@
 /*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 09:18:16 by btrifle           #+#    #+#             */
-/*   Updated: 2020/05/30 07:50:16 by btrifle          ###   ########.fr       */
+/*   Updated: 2020/05/31 13:13:52 by btrifle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,15 +61,10 @@ void	delete_node(t_map *f, int node)
 		if ((lst = delete_arc(f, tmp->data, node)))
 		{
 			free(lst);
-			lst = NULL;			
+			lst = NULL;
 		}
 		tmp = tmp->next;
 	}
 	delete_simple_linked_list(f->g + node);
 	tmp = f->g[node];
-	// if (tmp)
-	// 	ft_printf("YES\n");
-	// else
-	// 	ft_printf("NO\n");
-		
 }

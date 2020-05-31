@@ -6,7 +6,7 @@
 /*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 06:34:15 by btrifle           #+#    #+#             */
-/*   Updated: 2020/05/30 14:43:26 by btrifle          ###   ########.fr       */
+/*   Updated: 2020/05/31 13:03:03 by btrifle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,6 @@ void	count_paths_length(t_map *f)
 		while (j < f->max_order && f->paths[i][j] != -1)
 			j++;
 		f->len[i] = j;
-		// ft_printf("len[i] = \n");
 		i++;
 	}
 }
