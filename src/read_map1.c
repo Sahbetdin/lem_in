@@ -6,7 +6,7 @@
 /*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/14 15:16:14 by ogeonosi          #+#    #+#             */
-/*   Updated: 2020/05/29 17:59:36 by btrifle          ###   ########.fr       */
+/*   Updated: 2020/05/30 22:20:57 by btrifle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,18 @@
 ** if (*i_addr == 0) //if the line is zero length return false
 */
 
-t_bool	check_for_digits_in_line(char *line, int *i_addr)
+t_bool	check_for_digits_in_line(char *line)
 {
-	while (line[*i_addr] != '\0')
+	int i;
+	
+	i = 0;
+	while (line[i] != '\0')
 	{
-		if (!(ft_isdigit(line[*i_addr]) || line[*i_addr] == '+'
-		|| line[*i_addr] == ' '))
+		if (!(ft_isdigit(line[i]) || line[i] == '+' || line[i] == ' '))
 			return (false);
-		(*i_addr)++;
+		i++;
 	}
-	if (*i_addr == 0)
+	if (i == 0)
 		return (false);
 	return (true);
 }
@@ -45,19 +47,15 @@ t_bool	check_for_digits_in_line(char *line, int *i_addr)
 ** if OK, we FREE the line
 */
 
-t_bool	check_ant_line(t_map *f, char *line)
+t_bool	check_ant_line(t_map *f, char **line)
 {
-	int		i;
-	int		res_gnl;
-
-	res_gnl = get_next_line(0, &line);
-	if (res_gnl == 0)
+	if (get_next_line(0, line) < 0)
+		return (false);		
+	if (check_for_digits_in_line(*line) == false)
 		return (false);
-	i = 0;
-	if (check_for_digits_in_line(line, &i) == false)
-		return (false);
-	f->ants = ft_atoi(line);
-	free(line);
+	f->ants = ft_atoi(*line);
+	free(*line);
+	*line = NULL;
 	if (f->ants <= 0)
 		return (false);
 	f->flag_ants = true;
@@ -103,31 +101,32 @@ t_bool	check_flags_assigned_free_last_line(t_map *f, char *line)
 ** 		parsed then bad. Убрал || f->flag_rooms == true)
 */
 
-t_bool	read_map(t_map *f, char *line)
+t_bool	read_map(t_map *f, char **line)
 {
 	int		res_gnl;
 	char	*dash;
 
 	if (!check_ant_line(f, line))
 		return (false);
-	while ((res_gnl = get_next_line(0, &line)) > 0)
+	// ft_printf("\n\nGOT HERE \n\n");
+	while ((res_gnl = get_next_line(0, line)) > 0)
 	{
-		if (line[0] == '#')
+		if ((*line)[0] == '#')
 		{
-			if (is_command(f, &line) == false)
+			if (is_command(f, line) == false)
 				return (false);
 		}
-		else if (is_room(line))
+		else if (is_room(*line))
 		{
-			if (assign_room(f, line) == false)
+			if (assign_room(f, *line) == false)
 				return (false);
 		}
-		else if ((dash = ft_strchr(line, '-')) &&
-		parse_links(f, line, dash) == false)
+		else if ((dash = ft_strchr(*line, '-')) &&
+		parse_links(f, *line, dash) == false)
 			return (false);
-		ft_strdel(&line);
+		ft_strdel(line);
 	}
-	if (check_flags_assigned_free_last_line(f, line) == false)
+	if (check_flags_assigned_free_last_line(f, *line) == false)
 		return (false);
 	return (true);
 }

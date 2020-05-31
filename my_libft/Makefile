@@ -37,9 +37,11 @@ GREEN = "\033[0;32m"
 WHITE_B = "\033[1m"
 WHITE = "\033[0m"
 
+.PHONY: all clean fclean re FAKE
+
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) $(HEAD)
 	@ar rc $@ $^
 	@ranlib $(NAME)
 	@echo $(WHITE_B) Libft created. $(WHITE)

@@ -6,7 +6,7 @@
 /*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 09:17:58 by btrifle           #+#    #+#             */
-/*   Updated: 2020/05/28 11:58:53 by btrifle          ###   ########.fr       */
+/*   Updated: 2020/05/29 22:55:29 by btrifle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,18 @@
 
 /*
 ** initialize farm variables
-** hash_size 100 used
+**  100 used
 ** the only place where we allcate memory is hashmap_init
 */
 
+
+	
 void	farm_init(t_map *f)
 {
 	f->ants = 0;
 	f->start_vertex = 0;
 	f->end_vertex = 0;
-	f->hash_size = 5;
+	f->hash_size = 100;
 	f->ants = 0;
 	f->flag_ants = false;
 	f->flag_start = false;
@@ -43,6 +45,7 @@ void	farm_init(t_map *f)
 	f->pos = NULL;
 	f->len = NULL;
 	f->ants_in_paths = NULL;
+	f->rooms_ordered = NULL;
 }
 
 /*

@@ -6,7 +6,7 @@
 /*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/26 04:14:18 by btrifle           #+#    #+#             */
-/*   Updated: 2020/05/29 17:56:13 by btrifle          ###   ########.fr       */
+/*   Updated: 2020/05/31 09:46:21 by btrifle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,10 +127,10 @@ t_bool	move_one_step(t_map *f)
 
 	i = 0;
 	flag = false;
-	while (i < f->ants && f->pos[i].loc < f->max_order)
+	while (i < f->ants && f->pos[i].loc < f->max_order &&
+	f->pos[i].way != -1)
 	{
-		if (f->pos[i].way != -1 &&
-		f->paths[f->pos[i].way][f->pos[i].loc] != -1)
+		if (f->paths[f->pos[i].way][f->pos[i].loc] != -1)
 		{
 			f->pos[i].loc++;
 			flag = true;

@@ -6,7 +6,7 @@
 /*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/16 16:36:15 by btrifle           #+#    #+#             */
-/*   Updated: 2020/05/29 18:12:10 by btrifle          ###   ########.fr       */
+/*   Updated: 2020/05/30 14:43:00 by btrifle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ void	set_ants_to_paths_tmp(t_map *f, t_bool flag, int *arr, int *ants_n)
 		}
 		flag = move_one_step(f);
 		print_positions(f);
+	// flag = false;
 	}
 }
 
@@ -98,7 +99,7 @@ t_bool	set_and_move_ants(t_map *f, int *ants_n)
 	t_bool	flag;
 	int		*arr;
 
-	if ((arr = (int *)malloc(sizeof(int) * f->current_path + 1)) == NULL)
+	if ((arr = (int *)malloc(sizeof(int) * (f->current_path + 1))) == NULL)
 		return (false);
 	set_arr_temporarly(f, arr);
 	flag = true;

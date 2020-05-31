@@ -6,7 +6,7 @@
 /*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 21:35:37 by btrifle           #+#    #+#             */
-/*   Updated: 2020/05/29 18:31:23 by btrifle          ###   ########.fr       */
+/*   Updated: 2020/05/31 09:17:25 by btrifle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -205,11 +205,11 @@ char				*assign_start_end_to_hashmap(t_map *f, char *line,
 /*
 ** read_map1.c
 */
-t_bool				check_for_digits_in_line(char *line, int *i_addr);
-t_bool				check_ant_line(t_map *f, char *line);
+t_bool				check_for_digits_in_line(char *line);
+t_bool				check_ant_line(t_map *f, char **line);
 t_bool				assign_room(t_map *f, char *line);
 t_bool				check_flags_assigned_free_last_line(t_map *f, char *line);
-t_bool				read_map(t_map *f, char *line);
+t_bool				read_map(t_map *f, char **line);
 /*
 ** read_map2.c
 */
@@ -251,6 +251,10 @@ void				delete_node(t_map *f, int node);
 /*
 ** delete_farm1.c
 */
+
+void				delete_hash_map_with_neighbours_without_graph(t_map *f);
+void				delete_hash_map_without_neighbours_with_others(t_map *f);
+
 void				delete_hash_table(t_hash **h, int hash_size);
 void				del_bfs_order(t_map *f);
 void				del_shortest_path(t_map *f);

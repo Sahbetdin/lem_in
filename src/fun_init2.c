@@ -6,7 +6,7 @@
 /*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 09:18:10 by btrifle           #+#    #+#             */
-/*   Updated: 2020/05/26 16:57:11 by btrifle          ###   ########.fr       */
+/*   Updated: 2020/05/31 09:28:42 by btrifle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,14 +55,20 @@ t_bool		initiate_all_variables(t_map *f)
 	farm_init(f);
 	if ((f->first_raw = hashmap_init(f->first_raw, f->hash_size)) == NULL)
 		return (0);
-	flag_read_map = read_map(f, line);
+	flag_read_map = read_map(f, &line);	
 	if (flag_read_map == false)
+	{
+		ft_printf("ERROR in map\n");
 		free(line);
-	if (flag_read_map == false || graph_fill_in(f) == false ||
+		line = NULL;
+		delete_hash_map_with_neighbours_without_graph(f);
+		return (false);
+	}
+	if (graph_fill_in(f) == false ||
 	init_bfs_order_short_path_paths(f) == false || bfs(f, f->start_vertex)
 	== false || is_graph_connected(f) == false)
 	{
-		farm_delete(f);
+		delete_hash_map_without_neighbours_with_others(f);
 		return (false);
 	}
 	return (true);

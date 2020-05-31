@@ -6,7 +6,7 @@
 /*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/29 17:48:55 by btrifle           #+#    #+#             */
-/*   Updated: 2020/05/29 18:14:15 by btrifle          ###   ########.fr       */
+/*   Updated: 2020/05/31 09:33:36 by btrifle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,8 @@
 
 t_bool	init_path_lengths(t_map *f)
 {
-	if ((f->len = (int *)malloc(sizeof(int) * f->current_path + 1)) == NULL)
+	if ((f->len = (int *)malloc(sizeof(int) * (f->current_path + 1))) == NULL)
 		return (false);
-	count_paths_length(f);
 	if ((f->pos = (t_position *)malloc(sizeof(t_position) * f->ants)) == NULL)
 	{
 		free(f->len);
@@ -28,7 +27,7 @@ t_bool	init_path_lengths(t_map *f)
 		return (false);
 	}
 	if ((f->ants_in_paths = (int *)malloc(sizeof(int) *
-	f->current_path + 1)) == NULL)
+	(f->current_path + 1))) == NULL)
 	{
 		free(f->pos);
 		f->pos = NULL;
@@ -36,6 +35,7 @@ t_bool	init_path_lengths(t_map *f)
 		f->len = NULL;
 		return (false);
 	}
+	count_paths_length(f);
 	set_all_ant_initial_location(f);
 	set_0_ants_in_paths(f);
 	return (true);
@@ -80,10 +80,7 @@ t_bool	caravane_goes_farward(t_map *f)
 
 	add_start_end_to_paths(f);
 	if (init_path_lengths(f) == false)
-	{
-		farm_delete(f);
 		return (false);
-	}
 	curr_ants = f->ants;
 	count_ants_in_paths(f, &curr_ants);
 	curr_ants = f->ants;

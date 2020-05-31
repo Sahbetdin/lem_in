@@ -6,7 +6,7 @@
 /*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 09:18:45 by btrifle           #+#    #+#             */
-/*   Updated: 2020/05/29 17:58:15 by btrifle          ###   ########.fr       */
+/*   Updated: 2020/05/31 09:45:49 by btrifle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,9 +89,11 @@ void	print_positions(t_map *f)
 	flag = false;
 	while (i < f->ants)
 	{
-		if (f->pos[i].way != -1 &&
+		if (f->pos[i].way != -1 && f->pos[i].loc < f->max_order &&
 		f->paths[f->pos[i].way][f->pos[i].loc] != -1)
 		{
+			// ft_printf("\n~~~~~~~pos[i].way = %d~~~~~~~~\n", f->pos[i].way);
+			// ft_printf("\n~~~~~~~pos[i].loc = %d~~~~~~~~\n", f->pos[i].loc);
 			ft_printf("L%d-%s ", i + 1, f->rooms_ordered[f->paths
 			[f->pos[i].way][f->pos[i].loc]]);
 			flag = true;

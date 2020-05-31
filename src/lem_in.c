@@ -6,7 +6,7 @@
 /*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 09:18:37 by btrifle           #+#    #+#             */
-/*   Updated: 2020/05/29 18:10:50 by btrifle          ###   ########.fr       */
+/*   Updated: 2020/05/31 09:16:51 by btrifle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int		main(int argc, char **argv)
 		return (0);
 	}
 	if (initiate_all_variables(&farm) == false)
-		return (0);
+		return (0);		
 	if (farm.max_paths == 1)
 		path_assign(&farm, farm.paths[0]);
 	else
@@ -44,6 +44,6 @@ int		main(int argc, char **argv)
 	}
 	if (caravane_goes_farward(&farm) == false)
 		ft_printf("ERROR in paths");
-	farm_delete(&farm);
+	delete_hash_map_without_neighbours_with_others(&farm);
 	return (0);
 }
