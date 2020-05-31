@@ -11,29 +11,48 @@
 /* ************************************************************************** */
 
 #include "../lem_in.h"
-
-void	print_usage(void)
-{
-	ft_printf("	USAGE: bla-bla-bla \n");
-}
-
 /*
 ** some constrains: ant number is integer
 ** x, y room coordinates are greater than 0
 ** farm.max_paths is initiated and calculated in graph_fill_in
 */
 
+
+int		flags(int argc, char **argv)
+{
+	int	i;
+	int ret;
+
+	i = 1;
+	while (i < argc)
+	{
+		if (ft_strequ(argv[i], "-h") || ft_strequ(argv[i], "--help"))
+		{
+			ft_putstr("Usage:\n./lem-in [-h --help] [-v --visual] < map");
+			return (0);
+		}
+		if (ft_strequ(argv[i], "-v") || ft_strequ(argv[i], "--visual"))
+			return(1);
+		i++;
+	}
+	return(0);
+}
+
 int		main(int argc, char **argv)
 {
 	t_map	farm;
+	t_bool	vis;
+	int i;
 
-	if (argc != 1)
+	vis = false;
+	if (flags(argc, argv) == 1)
 	{
-		print_usage();
-		return (0);
+		vis = true;
 	}
 	if (initiate_all_variables(&farm) == false)
 		return (0);
+	if (vis == true)
+		visual(&farm);
 	if (farm.max_paths == 1)
 		path_assign(&farm, farm.paths[0]);
 	else
@@ -44,6 +63,8 @@ int		main(int argc, char **argv)
 	}
 	if (caravane_goes_farward(&farm) == false)
 		ft_printf("ERROR in paths");
+	if (vis == true)
+		visual2(&farm);
 	delete_hash_map_without_neighbours_with_others(&farm);
 	return (0);
 }

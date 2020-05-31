@@ -15,6 +15,7 @@
 # include "my_libft/libft.h"
 # include <string.h>
 # include <errno.h>
+# include <stdio.h>
 
 /*
 ** this structure define placement of an ant in a
@@ -274,4 +275,10 @@ void				del_paths(t_map *f);
 */
 void				delete_edge_temporaly(t_map *f);
 void				put_back_removed_arcs(t_map *f);
+/*
+** visual.c
+*/
+void	remove_coma(FILE *file);
+void		visual(t_map *f);
+void		visual2(t_map *f);
 #endif

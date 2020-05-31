@@ -1,7 +1,7 @@
 NAME = lem-in
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+#CFLAGS = -Wall -Wextra -Werror
 
 SRC =	./src/paths1.c ./src/paths2.c ./src/paths3.c ./src/paths4.c \
 		./src/find_other_paths.c \
@@ -11,7 +11,7 @@ SRC =	./src/paths1.c ./src/paths2.c ./src/paths3.c ./src/paths4.c \
 		./src/read_map1.c ./src/read_map2.c ./src/read_map3.c  ./src/read_map4.c \
 		./src/bfs.c ./src/work_with_bfs.c ./src/fun_linked_list.c \
 		./src/delete_farm1.c ./src/delete_farm2.c ./src/delete_farm3.c\
-		./src/fun_edges.c 
+		./src/fun_edges.c ./visual/visual1.c ./visual/visual2.c
 
 OBJECTS = $(patsubst %.c, %.o, $(SRC))
 
