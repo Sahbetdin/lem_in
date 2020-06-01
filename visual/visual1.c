@@ -1,8 +1,18 @@
-#include <stdio.h>
-#include <unistd.h>
-#include "../lem_in.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   visual1.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: btrifle <btrifle@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/06/01 13:41:49 by ogeonosi          #+#    #+#             */
+/*   Updated: 2020/06/01 13:59:17 by btrifle          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void	remove_coma(FILE *file)
+#include "visual.h"
+
+void	remove_comma(FILE *file)
 {
 	int		position;
 
@@ -11,25 +21,26 @@ void	remove_coma(FILE *file)
 	ftruncate(fileno(file), position);
 }
 
-void		visual(t_map *f)
+void	visual1(t_map *f)
 {
 	FILE	*file;
-	char	*a = "{ \"data\": { \"id\": \"";
-	char	*b = "\"}},\n";
+	char	a[20];
+	char	b[6];
 	char    *start = f->rooms_ordered[f->start_vertex];
 	char    *end = f->rooms_ordered[f->end_vertex];
-	size_t	nodes = f->max_order;
-	size_t	s = 0;
+	int		s = 0;
 	int  i;
 	int	 j;
 	t_linked *tmp_lst;
 
+	ft_strcpy(a, "{ \"data\": { \"id\": \"");
+	ft_strcpy(b, "\"}},\n");
 	file = fopen("./visual/data.json", "w");
 	fprintf(file, "{\n\"nodes\": \n[");
 
 	fprintf(file, "%s%s\", \"type\": \"start%s", a, start, b);
 	fprintf(file, "%s%s\", \"type\": \"end%s", a, end, b);
-	while (s < nodes)
+	while (s < f->max_order)
 	{
 		if (f->rooms_ordered[s] == start || f->rooms_ordered[s] == end)
 			s++;
@@ -54,8 +65,9 @@ void		visual(t_map *f)
 			tmp_lst = tmp_lst->next;
 			j++;
 		}
+		
 		i++;
 	}
-	remove_coma(file);
+	remove_comma(file);
 	fprintf(file, "],\n\"paths\":\n[");
 }

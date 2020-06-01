@@ -6,7 +6,7 @@
 /*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 21:35:37 by btrifle           #+#    #+#             */
-/*   Updated: 2020/05/31 13:15:18 by btrifle          ###   ########.fr       */
+/*   Updated: 2020/06/01 12:09:47 by btrifle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -275,10 +275,4 @@ void				del_paths(t_map *f);
 */
 void				delete_edge_temporaly(t_map *f);
 void				put_back_removed_arcs(t_map *f);
-/*
-** visual.c
-*/
-void	remove_coma(FILE *file);
-void		visual(t_map *f);
-void		visual2(t_map *f);
 #endif

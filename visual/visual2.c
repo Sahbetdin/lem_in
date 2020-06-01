@@ -1,16 +1,26 @@
-#include <stdio.h>
-#include <unistd.h>
-#include "../lem_in.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   visual2.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: btrifle <btrifle@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/06/01 13:54:48 by ogeonosi          #+#    #+#             */
+/*   Updated: 2020/06/01 13:59:28 by btrifle          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "visual.h"
 
 void		visual2(t_map *f)
 {
 	FILE	*file;
 	char	*a = "{ \"data\": { \"id\": \"";
 	char	*b = "\"}},\n";
-	char    *start = f->rooms_ordered[f->start_vertex];
-    char    *end = f->rooms_ordered[f->end_vertex];
-    size_t  cp = 0;
-    size_t i = 0;
+	char	*start = f->rooms_ordered[f->start_vertex];
+	char	*end = f->rooms_ordered[f->end_vertex];
+	int		cp = 0;
+	int		i = 0;
 
 	file = fopen("./visual/data.json", "ad");
 //   	print_all_paths(f->paths, f->max_paths, f->max_order);
