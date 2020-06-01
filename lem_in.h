@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lem_in.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: btrifle <btrifle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 21:35:37 by btrifle           #+#    #+#             */
-/*   Updated: 2020/06/01 12:09:47 by btrifle          ###   ########.fr       */
+/*   Updated: 2020/06/01 16:36:47 by btrifle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,7 @@ t_bool				set_and_move_ants(t_map *f, int *ants_n);
 */
 t_bool				init_paths_individually(t_map *f);
 t_bool				init_paths(t_map *f);
-t_bool				init_bfs_order_short_path_paths(t_map *f);
+t_bool				init_bfs_ord_short_path_paths(t_map *f);
 void				count_paths_length(t_map *f);
 void				set_0_ants_in_paths(t_map *f);
 /*
@@ -275,4 +275,11 @@ void				del_paths(t_map *f);
 */
 void				delete_edge_temporaly(t_map *f);
 void				put_back_removed_arcs(t_map *f);
+/*
+** short_sircuit.c
+*/
+char				*end_room_name(t_map *f);
+void				print_short_circuit(t_map *f, char *str);
+t_bool				find_start_linked_list(t_map *f);
+t_bool				process_short_circuit(t_map *f);
 #endif

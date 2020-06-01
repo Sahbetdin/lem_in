@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fun_init2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: btrifle <btrifle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 09:18:10 by btrifle           #+#    #+#             */
-/*   Updated: 2020/05/31 13:06:06 by btrifle          ###   ########.fr       */
+/*   Updated: 2020/06/01 16:36:59 by btrifle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,10 @@ t_bool		initiate_all_variables(t_map *f)
 		delete_hash_map_with_neighbours_without_graph(f);
 		return (false);
 	}
-	if (graph_fill_in(f) == false ||
-	init_bfs_order_short_path_paths(f) == false || bfs(f, f->start_vertex)
-	== false || is_graph_connected(f) == false)
+	if (process_short_circuit(f) == true)
+		return (false);
+	if (graph_fill_in(f) == false || init_bfs_ord_short_path_paths(f) == false
+	|| bfs(f, f->start_vertex) == false || is_graph_connected(f) == false)
 	{
 		delete_hash_map_without_neighbours_with_others(f);
 		return (false);
