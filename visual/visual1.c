@@ -5,69 +5,73 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: btrifle <btrifle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/06/01 13:41:49 by ogeonosi          #+#    #+#             */
-/*   Updated: 2020/06/01 13:59:17 by btrifle          ###   ########.fr       */
+/*   Created: 2020/06/01 17:06:58 by ogeonosi          #+#    #+#             */
+/*   Updated: 2020/06/01 17:59:10 by btrifle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "visual.h"
 
-void	remove_comma(FILE *file)
+void			remove_comma(FILE *file)
 {
-	int		position;
+	int			position;
 
 	fseeko(file, -2, SEEK_END);
 	position = ftello(file);
 	ftruncate(fileno(file), position);
 }
 
-void	visual1(t_map *f)
+void			print_edge(FILE *file, t_map *f)
 {
-	FILE	*file;
-	char	a[20];
-	char	b[6];
-	char    *start = f->rooms_ordered[f->start_vertex];
-	char    *end = f->rooms_ordered[f->end_vertex];
-	int		s = 0;
-	int  i;
-	int	 j;
-	t_linked *tmp_lst;
+	int			i;
+	int			j;
+	t_linked	*tmp_lst;
 
-	ft_strcpy(a, "{ \"data\": { \"id\": \"");
-	ft_strcpy(b, "\"}},\n");
-	file = fopen("./visual/data.json", "w");
-	fprintf(file, "{\n\"nodes\": \n[");
-
-	fprintf(file, "%s%s\", \"type\": \"start%s", a, start, b);
-	fprintf(file, "%s%s\", \"type\": \"end%s", a, end, b);
-	while (s < f->max_order)
-	{
-		if (f->rooms_ordered[s] == start || f->rooms_ordered[s] == end)
-			s++;
-		else
-		{
-			fprintf(file, "%s%s", a, f->rooms_ordered[s]);
-			fprintf(file, "%s", b);
-			s++;
-		}
-	}
-	fseeko(file, -2, SEEK_END);
-	ftruncate(fileno(file), ftello(file));
 	i = 0;
-	fprintf(file, "],\n\"edges\":\n[");
 	j = 0;
+	fprintf(file, "],\n\"edges\":\n[");
 	while (i < f->max_order)
 	{
 		tmp_lst = f->g[i];
 		while (tmp_lst)
 		{
-			fprintf(file, "%se%d\",\"source\":\"%s\",\"target\":\"%s\"}},\n", a, j, f->rooms_ordered[i], f->rooms_ordered[tmp_lst->data]);
+			fprintf(file, "{ \"data\": { \"id\": \"e%d\",\"source\":\""
+				"%s\",\"target\":\"%s\"}},\n",
+				j, f->rooms_ordered[i], f->rooms_ordered[tmp_lst->data]);
 			tmp_lst = tmp_lst->next;
 			j++;
 		}
-		
 		i++;
 	}
 	remove_comma(file);
 	fprintf(file, "],\n\"paths\":\n[");
+}
+
+void			visual1(t_map *f)
+{
+	FILE		*file;
+	int			s;
+
+	s = 0;
+	file = fopen("./visual/data.json", "w");
+	fprintf(file, "{\n\"nodes\": \n[");
+	fprintf(file, "{ \"data\": { \"id\": \"%s\", \"type\": \"start\"}},\n",
+			f->rooms_ordered[f->start_vertex]);
+	fprintf(file, "{ \"data\": { \"id\": \"%s\", \"type\": \"end\"}},\n",
+			f->rooms_ordered[f->end_vertex]);
+	while (s < f->max_order)
+	{
+		if (f->rooms_ordered[s] == f->rooms_ordered[f->start_vertex]
+			|| f->rooms_ordered[s] == f->rooms_ordered[f->end_vertex])
+			s++;
+		else
+		{
+			fprintf(file, "{ \"data\": { \"id\": \"%s", f->rooms_ordered[s]);
+			fprintf(file, "\"}},\n");
+			s++;
+		}
+	}
+	fseeko(file, -2, SEEK_END);
+	ftruncate(fileno(file), ftello(file));
+	print_edge(file, f);
 }

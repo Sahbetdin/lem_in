@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   paths2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: btrifle <btrifle@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: btrifle <btrifle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 06:34:15 by btrifle           #+#    #+#             */
-/*   Updated: 2020/05/31 13:03:03 by btrifle          ###   ########.fr       */
+/*   Updated: 2020/06/01 15:12:44 by btrifle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ t_bool	init_paths(t_map *f)
 ** the error message for init_paths in that function
 */
 
-t_bool	init_bfs_order_short_path_paths(t_map *f)
+t_bool	init_bfs_ord_short_path_paths(t_map *f)
 {
 	f->bfs_order = (int *)malloc(sizeof(int) * f->max_order);
 	f->shortest_path = (int *)malloc(sizeof(int) * f->max_order);

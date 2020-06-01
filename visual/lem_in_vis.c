@@ -18,11 +18,10 @@
 ** farm.max_paths is initiated and calculated in graph_fill_in
 */
 
-
-int		flags(int argc, char **argv)
+int			flags(int argc, char **argv)
 {
-	int	i;
-	int ret;
+	int		i;
+	int		ret;
 
 	i = 1;
 	while (i < argc)
@@ -33,23 +32,21 @@ int		flags(int argc, char **argv)
 			return (0);
 		}
 		if (ft_strequ(argv[i], "-v") || ft_strequ(argv[i], "--visual"))
-			return(1);
+			return (1);
 		i++;
 	}
-	return(0);
+	return (0);
 }
 
-int		main(int argc, char **argv)
+int			main(int argc, char **argv)
 {
 	t_map	farm;
 	t_bool	vis;
-	int i;
+	int		i;
 
 	vis = false;
 	if (flags(argc, argv) == 1)
-	{
 		vis = true;
-	}
 	if (initiate_all_variables(&farm) == false)
 		return (0);
 	if (vis == true)
